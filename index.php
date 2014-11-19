@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="思维特" content="一个在线的软件商店">
     <title>思维特在线商店——软件商店</title>
     <script src="js/jquery.min.js"></script>
@@ -37,7 +37,7 @@
 <div class="model-window" id="login">
 	<div class="window-main" id="login-window">
 		<span style="position:relative;float: right;font-size: 30px;cursor: pointer;" onclick="$('#login').hide()">×</span>
-		<form action="" method="post">
+		<form action="logchk.php" method="post">
 			<div class="form-group">
 				<!--<label for="username">用户名</label>-->					
 				<input type="text" placeholder="请输入用户名" name="username" class="form-control"/>
@@ -54,7 +54,7 @@
 				<a href="#" target="_blank">没有账户？前去注册</a>
 			</div>
 			<div class="form-group">
-				<button class="btn" type="button" value="login">登录</button>
+				<button class="btn" type="submit" value="login">登录</button>
 			</div>
 		</form>
 	</div>
@@ -62,7 +62,7 @@
 <div class="model-window" id="regist" style="">
 	<div class="window-main" id="regist-window">
 		<span style="position:relative;float: right;font-size: 30px;cursor: pointer;" onclick="$('#regist').hide()">×</span>
-		<form action="" method="post">
+		<form action="regchk.php" method="post">
 			<div class="form-group">
 				<!--<label for="username">用户名</label>-->					
 				<input type="text" placeholder="请输入用户名" name="username" class="form-control" required="required"/>
@@ -84,10 +84,10 @@
 				
 			</div>
 			<div class="form-group">			
-				<input type="email" placeholder="请输入email" name="email" class="form-control" required="required" pattern=" /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.(?:com|cn)$/"/>				
+				<input type="email" placeholder="请输入email" name="email" class="form-control" required="required" pattern="^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"/>				
 			</div>
 			<div class="form-group">
-				<button class="btn" type="button" value="login" required="">注册并登录</button>
+				<button class="btn" type="submit" value="login" required="">注册并登录</button>
 			</div>
 		</form>
 	</div>
