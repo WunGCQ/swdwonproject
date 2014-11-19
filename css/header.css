@@ -1,0 +1,28 @@
+#header{
+	position: relative;
+	display: block;
+}
+#header>div{
+	display: inline-block;
+	vertical-align: top;
+}
+#logo-div{
+	
+}
+#header a{
+	color:#111;
+	text-decoration: none;
+}
+#header a:link{
+	color: #111;
+}
+#header a:visited{
+	color: #111;
+}
+#header a:hover{
+	color: #31A5E7;
+}
+#header a:active{
+	color: #31A5E7;
+}
+
