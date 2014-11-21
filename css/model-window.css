@@ -1,5 +1,6 @@
 .model-window{
 	display: block;
+	display: none;
 	position: fixed;
 	top:0px;
 	height:0px;
@@ -61,10 +62,13 @@
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  /*border-color: #66afe9;*/
+ border-color: #999;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);*/
+          /*box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px rgba(0, 0, 0, .5);
+  		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px rgba(0, 0, 0, .5);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -92,7 +96,8 @@
 
 form .btn[value="login"]{
 	display: block;
-	background-color: #31A5E7;
+	/*background-color: #31A5E7;*/
+	background-color: #444;
 	color: #fff;
 	width: 100%;
 	padding: 10px 30px;
@@ -101,4 +106,29 @@ form .btn[value="login"]{
 	cursor: pointer;
 	border: none;
 	font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+.btn[value="login"]:hover{
+    background-color:#333;
+}
+.close{
+    position:relative;
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+.close:hover{
+    text-shadow: 0px 0px 3px #666;
+}
+#address-window{
+    width: 500px;
+}
+#address-window>form{
+    margin-top: 50px;
+}
+#address-window input,#address-window textarea{
+    width: 400px;
+    margin: 5px auto;
+}
+textarea{
+    resize: vertical;
 }
