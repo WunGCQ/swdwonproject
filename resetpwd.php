@@ -13,7 +13,12 @@
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
 </head>
 <body>
-    <p>验证码：<input type="text" class="input" id="code_num" name="code_num" maxlength="4" />  
-    <img src="code_num.php" id="getcode_num" title="看不清，点击换一张" align="absmiddle" onclick="changeimage()"></p> 
-    <p><input type="button" class="btn" id="chk_num" value="提交" /></p> 
+    <?php include("header.php"); ?>、
+    <form action="updatepwd.php" method="post">
+        <p><strong>输入新密码</strong></p> 
+        <p><input type="text" class="input" name="password" id="username"><span id="chkmsg"></span></p>
+        <p><input type="text" class="input" name="password_again" id="email"><span id="chkmsg"></span></p> 
+        <p><button type="submit" class="btn" id="sub_btn" value="submit">提交</button></p> 
+    </form>
+
 </body>

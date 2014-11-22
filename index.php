@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="思维特" content="一个在线的软件商店">
     <title>思维特在线商店——软件商店</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
 </head>
 <body>
-	<div id="header">
-		<div id="logo-div">
-			<p>
-				思维特
-				<br />
-				www.swdown.com
-			</p>
-		</div>
-		<div id="nav">
-			<span><a href="" target="_blank">Apple 商品</a></span>
-			<span><a href="" target="_blank">Adobe 商品</a></span>
-			<span><a id=username>用户名</a></span>
-			<span><a href="">登录</a></span>
-			<span><a href="">注册</a></span>
-		</div>
-	</div>
+	<?php include("header.php"); ?>
 	<div id="container">
-		
+		<ul id="nav">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">Apple商品</a></li>
+			<li><a href="#">Adobe商品</a></li>
+            <li><a href="#">使用说明</a></li>
+            <li><a href="#">关于我们</a></li>
+			<li></li>
+		</ul>
+        <div id="commodities-wrap">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
 	</div>
 	<div id="footer">
-		
+		table
 	</div>
 </body>
 <div class="model-window" id="login">
@@ -49,9 +127,9 @@
 				
 			</div>
 			<div class="form-group">
-				<a href="#" target="_blank">忘记密码？</a>
+				<a href="getpwdurl.php" target="_blank">忘记密码？</a>
 				&nbsp;
-				<a href="#" target="_blank">没有账户？前去注册</a>
+				<a href="#" target="_blank">前去注册~</a>
 			</div>
 			<div class="form-group">
 				<button class="btn" type="submit" value="login">登录</button>
@@ -61,7 +139,7 @@
 </div>
 <div class="model-window" id="regist" style="">
 	<div class="window-main" id="regist-window">
-		<span style="position:relative;float: right;font-size: 30px;cursor: pointer;" onclick="$('#regist').hide()">×</span>
+		<span class="close" onclick="$('#regist').hide()">×</span>
 		<form action="regchk.php" method="post">
 			<div class="form-group">
 				<!--<label for="username">用户名</label>-->					

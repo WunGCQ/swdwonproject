@@ -1,6 +1,3 @@
 <?php
-	
-	echo "time："
-	echo date();
-
+	include("function.php");
 ?>

@@ -13,21 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/user-center.css"/>
 </head>
 <body>
-<div id="header">
-    <div id="header-container">
-        <div id="logo-div">
-            思维特LOGO
-
-        </div>
-        <div id="header-user-block">
-            <span><a id="username">用户名</a></span>
-            <span><a id="shopping-cart" href="javascript:changeTab('shoppingcart');">购物车</a></span>
-            <span><a href="#">注销</a></span>
-            <!--<span><a href="javascript:$('#login').show()" id="show-login">登录</a></span>|-->
-            <!--<span><a href="javascript:$('#regist').show()" id="show-regist">注册</a></span>-->
-        </div>
-    </div>
-</div>
+    <?php include("header.php"); ?>
     <div id="container">
         <div id="left-bar">
             <ul id="nav">
@@ -39,22 +25,7 @@
         </div>
         <div id="right-bar">
             <div id="change-info" class="active-wrap">
-                <form action="" method="post">
-                    <!--<div class="form-group">-->
-                        <!--<label for="username">用户名</label>-->
-                        <!--<input type="text" placeholder="请输入用户名" name="username" class="form-control" required="required"/>-->
-
-                    <!--</div>-->
-                    <!--<div class="form-group">-->
-                        <!--<label for="password">密码</label>-->
-                        <!--<input type="password" placeholder="请输入用户密码" name="password" class="form-control" required="required"/>-->
-
-                    <!--</div>-->
-
-                    <!--<div class="form-group">-->
-                        <!--<label for="password-again">再次输入密码</label>-->
-                        <!--<input type="password" placeholder="请确认用户密码" name="password-again" class="form-control" required="required"/>-->
-                    <!--</div>-->
+                <form action="chgmsg.php" method="post">
                     <div class="form-group">
                         <label for="phonenumber">手机号</label>
                         <input type="tel" placeholder="请输入手机号" name="phonenumber" class="form-control" required="required"/>
@@ -62,15 +33,15 @@
                     </div>
                     <div class="form-group">
                         <label for="password">邮件地址</label>
-                        <input type="email" placeholder="请输入email" name="email" class="form-control" required="required" pattern=" /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.(?:com|cn)$/"/>
+                        <input type="email" placeholder="请输入email" name="email" class="form-control" required="required" pattern="^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"/>
                     </div>
                     <div class="form-group">
-                        <button class="btn" type="button" value="submit" required="">确认修改并提交</button>
+                        <button class="btn" type="submit" value="submit" required="">确认修改并提交</button>
                     </div>
                 </form>
             </div>
             <div id="change-password" class="hidden-wrap">
-                <form action="" method="post">
+                <form action="chgpwd.php" method="post">
                     <div class="form-group">
                         <label for="old-password">原密码</label>
                         <input type="password" placeholder="请输入原密码" name="old-password" class="form-control" required="required"/>
@@ -86,51 +57,31 @@
                         <input type="password" placeholder="请确认用户密码" name="password-again" class="form-control" required="required"/>
                     </div>
                     <div class="form-group">
-                        <button class="btn" type="button" value="submit" required="">确认修改并提交</button>
+                        <button class="btn" type="submit" value="submit" required="">确认修改并提交</button>
                     </div>
                 </form>
             </div>
             <div id="admin-address" class="hidden-wrap" style="text-align: center;">
-                <div class="address">
-                    <div>
-                        <div class="address-name">填入姓名1</div>
-                        <div class="address-phone">12345678912</div>
-                        <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些填入地址考虑到地址比较长所以就留的长度大一些</div>
-                    </div>
+                <?php
+                    include("conn/conn.php");
+                    $ans = mysql_query("select * from address where u_id = '".$_SESSION['u_id']."'");
+                    while($info = mysql_fetch_array($ans))
+                    {
+                        echo "
+                        <div class=\"address\">
+                            <div>
+                                <div class=\"address-name\">".$info["a_name"]."</div>
+                                    <div class=\"address-phone\">".$info["a_telephone"]."</div>
+                                <div class=\"address-address\">".$info["a_address"]."</div>
+                            </div>
 
-                    <div>
-                        <div class="delete-address">删除</div>
-                        <div class="change-address">修改</div>
-                    </div>
-
-                </div>
-                <div class="address">
-                    <div>
-                        <div class="address-name">填入姓名3</div>
-                        <div class="address-phone">12345678912</div>
-                        <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些填入地址考虑到地址比较长所以就留的长度大一些</div>
-                    </div>
-
-                    <div>
-                        <div class="delete-address">删除</div>
-                        <div class="change-address">修改</div>
-                    </div>
-
-                </div>
-                <div class="address">
-                    <div>
-                        <div class="address-name">填入姓名1</div>
-                        <div class="address-phone">12345678912</div>
-                        <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些填入地址考虑到地址比较长所以就留的长度大一些</div>
-                    </div>
-
-                    <div>
-                        <div class="delete-address">删除</div>
-                        <div class="change-address">修改</div>
-                    </div>
-
-                </div>
-
+                            <div>
+                                <div class=\"delete-address\">删除</div>
+                                <div class=\"change-address\">修改</div>
+                            </div>
+                        </div>";
+                    }  
+                ?>
                 <div>
                     <button class="btn" type="button" value="add-address" onclick="$('#change-address').show();">添加收货地址</button>
                 </div>
