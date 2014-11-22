@@ -1,3 +1,14 @@
+<?php
+
+    $s_id = stripslashes(trim($_GET['s_id'])); 
+    include("conn/conn.php");
+    $sql = mysql_query("select * from software where s_id = '".$s_id."'",$conn);
+    $amt = mysql_query("select COUNT(*) as cnt from s_number where s_id = '".$s_id."'",$conn);
+    if(!$sql || !$amt) echo "<script>alert('数据库查询错误');;</script>";
+    $info = mysql_fetch_array($sql);
+    $arr = mysql_fetch_array($amt);
+    $amount = $arr["cnt"];
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -6,6 +17,7 @@
     <title>软件</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/product.js"></script>
     <script src="js/cookie.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
@@ -126,18 +138,25 @@
             color: #fff;
             padding: 10px 20px;
             cursor: pointer;
+            border: none;
+            border-radius: 1px;
+            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
         }
-        #buy-now{
+        #buybuybuy form{
+            width: auto;
+            display: inline-block;
+        }
+        button[value="buy_now"]{
             background-color:#EA5245;
             margin-right: 20px;
         }
-        #buy-now:hover{
+        button[value="buy_now"]:hover{
             background-color: #cc483c;
         }
-        #add-to-shopping-cart{
+        button[value="add_into_cart"]{
             background-color: #31A5E7;
         }
-        #add-to-shopping-cart:hover{
+        button[value="add_into_cart"]:hover{
             background-color: #319ddd;
         }
         #product-nav-container{
@@ -199,7 +218,6 @@
     <div id="header-container">
         <div id="logo-div">
             思维特LOGO
-
         </div>
         <div id="header-user-block">
             <span><a id="username">用户名</a></span>
@@ -218,13 +236,13 @@
         </div>
         <div id="brief-info-text">
             <div id="product-name">
-                Saber骑着摩托车奔驰在冬木市漆黑的夜路中绝尘而去，吾王赛高！
+                <?php echo $info["s_name"]; ?>
             </div>
             <div id="product-price">
-                666666
+                <?php echo $info["s_price"]; ?>
             </div>
             <div id="product-amount">
-                20
+                <?php echo $amount; ?>
             </div>
             <div id="select-amount-wrap">
                 <div>数量：</div>
@@ -233,8 +251,16 @@
                 <div id="amount-add" onclick="changeAmount(1)">+</div>
             </div>
             <div id="buybuybuy">
-                <div class="btn" id="buy-now">立即购买</div>
-                <div class="btn" id="add-to-shopping-cart">加入购物车</div>
+                <form id="buy_now" action="" method="post">
+                    <input name="amount" id="buy-now-input" value="1" style="display:none;"/>
+                    <button class="btn" type="submit" value="buy_now" required="">立即购买</button>
+                </form>
+
+                <form id="add_into_cart" action="add_into_cart" method="post">
+                    <?php  echo "<input id=\"softw_id\" name=\"software_id\" type=\"hidden\" value=".$info["s_id"]." />";  ?>
+                    <input name="amount" id="add-into-cart-input" value="1" style="display:none;"/>
+                    <button class="btn" type="button" value="add_into_cart" required="" onclick="add_in_cart_onclick()">加入购物车</button>
+                </form>
             </div>
         </div>
     </div>
@@ -249,13 +275,13 @@
     <div id="tab-wrap">
         <div class="tab active">
             <article>
-                <p>这里是正文1</p>
+                <p><?php echo $info["s_introd"] ?></p>
             </article>
 
         </div>
         <div class="tab">
             <article>
-                <p>这里是正文2</p>
+                <p><?php echo $info["s_requirement"] ?></p>
             </article>
         </div>
         <div class="tab">
@@ -283,6 +309,8 @@
                 }
                 amount--;
                 $("#amount-number").val(amount);
+                $("#add-into-cart-input").val(amount);
+                $("#buy-now-input").val(amount);
             }
             else{
                 $("#amount-minus").css({"background-color":"#f1f1f1"});
@@ -293,6 +321,11 @@
             amount++;
             $("#amount-minus").css({"background-color":"#ddd"});
             $("#amount-number").val(amount);
+
+            $("#add-into-cart-input").val(amount);
+            $("#buy-now-input").val(amount);
+            console.log($("#add-into-cart-input").val());
+            console.log(document.getElementById('add-into-cart-input').value);
         }
     }
     function change_tab(TabObj){
