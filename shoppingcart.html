@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>购物车</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/warning.js"></script>
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
     <link rel="stylesheet" type="text/css" href="css/user-center.css"/>
+    <link rel="stylesheet" href="css/warning.css"/>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
 </head>
 <body onload="calculate_price()">
     <div id="container">
@@ -66,6 +73,18 @@
 
         </div>
     </div>
+<!--<div id="warning">-->
+    <!--<div id="warning-window">-->
+        <!--<div id="warning-title">警告！</div>-->
+            <!--<div id="warning-close" style="" onclick="$('#warning').hide()">×</div>-->
+        <!--<div id="warning-wrap">-->
+            <!--<div id="warning-content">-->
+                <!--吾王赛高！-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</div>-->
 
 </body>
 <script>
@@ -122,5 +141,6 @@
     $(".amount-minus").attr("onclick","changeAmount(this,-1)");
     $(".amount-add").attr("onclick","changeAmount(this,1)");
     $(".delete-software").attr("onclick","delete_tab(this)");
+    warn("成功了","恭喜您又成功了","s");
 </script>
 </html>
