@@ -3,6 +3,8 @@
 	
 	function checkInput()
 	{
+		$msg = "";
+
 		include("conn/conn.php");
 		include("function.php");
 		$u_name = trim($_POST['username']);
@@ -11,20 +13,25 @@
 		$info = mysql_fetch_array($sql);
 		if($info)
 		{
-			echo "<script language='javascript'>alert('用户名已经存在！');history.back();</script>";
+			echo "用户名已经存在!";
 			return;
 		}
 
 		$u_password = md5(trim($_POST['password']));
-		$u_telephone = trim($_POST['phonenumber']);
+		$u_telephone = trim($_POST['telephone']);
 		$u_email = trim($_POST['email']);
 		$u_token = md5($u_name.$u_password.time());
 		$u_exptime = time()+60*60*24;
-		
+
+		/*echo $u_name.",".$u_password.",".$u_email.",".$u_telephone;
+		return;*/
+
 		$sql = "insert into user(u_name,u_password,u_email,u_telephone,u_isadmin,u_token,u_exptime,u_status) values('".$u_name."','".md5($u_password)."','".$u_email."','".$u_telephone."',0,'".$u_token."','".$u_exptime."',0)";
 		$insert =mysql_query($sql,$conn);
-		if($insert == 0)
-			echo "<script language='javascript'>alert('数据库插入异常');history.back();</script>";
+		if($insert == 0){
+			echo "数据库异常";
+			return;
+		}
 
 		$to = $u_email;
 		$subject = "用户账号激活邮件";
@@ -34,7 +41,8 @@
     如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。";
 
     	sendEmails($to,$subject,$body);
-		echo "<script language='javascript'>alert('注册成功,请及时查看邮箱进行激活');</script>";
+
+    	echo "success";
 	}
 	checkInput();
 ?>

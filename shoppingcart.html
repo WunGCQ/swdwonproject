@@ -8,17 +8,21 @@
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
-    <link rel="stylesheet" type="text/css" href="css/user-center.css"/>
+    <link rel="stylesheet" href="css/shoppping.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/user-center.css"/>-->
     <link rel="stylesheet" href="css/warning.css"/>
     <style>
-        body{
-            text-align: center;
+
+        .address{
+            width: 465px;
+            display: inline-block;
+            font-size: 14px;
         }
     </style>
 </head>
 <body onload="calculate_price()">
     <div id="container">
-        <h2 style="text-align: center;margin-bottom: -15px;">购物车</h2>
+        <h2 style="text-align: center;margin-bottom: 15px;">购物车</h2>
         <div id="shoppingcart" class="tab active-wrap" style="text-align: center;">
             <div class="shoppingcart-list">
                 <table style="margin: 10px auto;">
@@ -66,6 +70,29 @@
                     </tbody>
                 </table>
 
+            </div>
+            <div id="select-address" class="tab active-wrap" style="text-align: left;">
+                <div class="address selected-address">
+                    <div>
+                        <div class="address-name">填入姓名1</div>
+                        <div class="address-phone">12345678912</div>
+                        <div class="address-address">北京丝海淀区学院路37号北京航空航天大学5号公寓721室</div>
+                    </div>
+                </div>
+                <div class="address">
+                    <div>
+                        <div class="address-name">填入姓名3</div>
+                        <div class="address-phone">12345678912</div>
+                        <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些</div>
+                    </div>
+                </div>
+                <div class="address">
+                    <div>
+                        <div class="address-name">填入姓名3</div>
+                        <div class="address-phone">12345678912</div>
+                        <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些</div>
+                    </div>
+                </div>
             </div>
             <div>
                 <button class="btn" type="button" value="submit" onclick="" style="margin-right:0px;width:150px;font-size: 20px;">结算</button>
@@ -138,9 +165,17 @@
         else{
         }
     }
+    function setAddress(AddressObj){
+        var selectedAddress=$(AddressObj);
+        $(".address").attr("class","address");
+        selectedAddress.attr("class","address selected-address");
+        id=AddressObj.id;
+        //TODO
+        //在这里获取id~~和后续操作
+    }
     $(".amount-minus").attr("onclick","changeAmount(this,-1)");
     $(".amount-add").attr("onclick","changeAmount(this,1)");
     $(".delete-software").attr("onclick","delete_tab(this)");
-    warn("成功了","恭喜您又成功了","s");
+    $(".address").attr("onclick","setAddress(this)");
 </script>
 </html>

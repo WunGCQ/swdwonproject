@@ -59,7 +59,7 @@
 <div class="model-window" id="regist" style="">
 	<div class="window-main" id="regist-window">
 		<span class="close" onclick="$('#regist').hide()">×</span>
-		<form action="regchk.php" method="post">
+		<form id="reg" action="regchk.php" method="post">
 			<div class="form-group">
 				<!--<label for="username">用户名</label>-->					
 				<input type="text" placeholder="请输入用户名" name="username" class="form-control" required="required"/>
@@ -83,8 +83,14 @@
 			<div class="form-group">			
 				<input type="email" placeholder="请输入email" name="email" class="form-control" required="required" pattern="^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"/>				
 			</div>
+			<div class="form-group">			
+				<input id="vcode" type="vcode" placeholder="请输入验证码" name="vcode" class="form-control" required="required"/>				
+			</div>
+			<div class="form-group">			
+				<image id="vimage" type="vimage" src="code_num.php" name="vimage" class="form-control" required="required" onclick="vcode_onclick()"/>				
+			</div>
 			<div class="form-group">
-				<button class="btn" type="submit" value="login" required="">注册并登录</button>
+				<button class="btn" type="button" value="login" required="" onclick="check_vcode()">注册并登录</button>
 			</div>
 		</form>
 	</div>

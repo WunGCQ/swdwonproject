@@ -4,32 +4,31 @@
 	session_start();
 	include("conn/conn.php");
 
-	$u_oldpwd = $_POST["old-password"];
-	$u_newpwd = $_POST["new-password"];
+	$u_oldpwd = $_POST["old_password"];
+	$u_newpwd = $_POST["new_password"];
+	$msg = "";
 
 	$ans = mysql_query("select u_password from user where u_id = ".$_SESSION["u_id"],$conn);
 	$info = mysql_fetch_array($ans);
 
 	if(!$info)
 	{
-		echo "<script language='javascript'>alert('数据库查询异常，请稍后再试');history.back();</script>"; 
-	}
-	if($info["u_password"] != md5($u_oldpwd))
-	{
-		echo "<script language='javascript'>alert('原始密码错误！');history.back();</script>"; 
+		$msg = "database select error";
 	}
 	else
 	{
-		$sql = "update user set u_password = '".md5($u_newpwd)."'";
-
-		$update = mysql_query($sql,$conn);
-		if(!$update)
-		{
-			echo "<script language='javascript'>alert('数据库插入异常，请稍后再试');history.back();</script>";
-		}
+		if($info["u_password"] != md5($u_oldpwd))
+			$msg = "password error";
 		else
 		{
-			echo "<script language='javascript'>alert('修改密码成功');history.back()</script>";
+			$sql = "update user set u_password = '".md5($u_newpwd)."'";
+
+			$update = mysql_query($sql,$conn);
+			if(!$update)
+				$msg = "database update error";
+			else
+				$msg = "success";
 		}
 	}
+	echo $msg;
 ?>
