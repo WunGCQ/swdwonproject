@@ -214,21 +214,7 @@
     </style>
 </head>
 <body>
-<div id="header">
-    <div id="header-container">
-        <div id="logo-div">
-            思维特LOGO
-        </div>
-        <div id="header-user-block">
-            <span><a id="username">用户名</a></span>
-            <span><a id="shopping-cart">购物车</a></span>
-            <span><a href="javascript:$('#login').show()" id="show-login">登录</a></span>|
-            <span><a href="javascript:$('#regist').show()" id="show-regist">注册</a></span>
-        </div>
-
-    </div>
-
-</div>
+<?php include("header.php"); ?>
 <div id="brief-info">
     <div id="brief-info-content">
         <div id="brief-info-images">
@@ -243,6 +229,7 @@
             </div>
             <div id="product-amount">
                 <?php echo $amount; ?>
+                <?php echo "<input id=\"s_total\" name=\"s_total\" type=\"hidden\" value=".$amount." />";  ?>
             </div>
             <div id="select-amount-wrap">
                 <div>数量：</div>
@@ -251,15 +238,12 @@
                 <div id="amount-add" onclick="changeAmount(1)">+</div>
             </div>
             <div id="buybuybuy">
-                <form id="buy_now" action="" method="post">
-                    <input name="amount" id="buy-now-input" value="1" style="display:none;"/>
-                    <button class="btn" type="submit" value="buy_now" required="">立即购买</button>
-                </form>
+                <input name="amount" id="buy-now-input" value="1" style="display:none;"/>
+                <button class="btn" type="submit" value="buy_now" required="" onclick="buy_now()">立即购买</button>
 
-                <form id="add_into_cart" action="add_into_cart" method="post">
-                    <?php  echo "<input id=\"softw_id\" name=\"software_id\" type=\"hidden\" value=".$info["s_id"]." />";  ?>
-                    <input name="amount" id="add-into-cart-input" value="1" style="display:none;"/>
-                    <button class="btn" type="button" value="add_into_cart" required="" onclick="add_in_cart_onclick()">加入购物车</button>
+                <?php  echo "<input id=\"softw_id\" name=\"software_id\" type=\"hidden\" value=".$info["s_id"]." />";  ?>
+                <input name="amount" id="add-into-cart-input" value="1" style="display:none;"/>
+                <button class="btn" type="button" value="add_into_cart" required="" onclick="add_in_cart_onclick()">加入购物车</button>
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@
 		</div>
 		<div id="header-user-block">
 			<?php
+				error_reporting(0);
 				session_start();
 				if($_SESSION["u_id"])
 				{
