@@ -129,6 +129,28 @@ form .btn[value="login"]{
     width: 400px;
     margin: 5px auto;
 }
+#phone-window,#email-window{
+    width: 295px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+#phone-window .btn,#email-window .btn{
+    width: 285px;
+    margin-top:0px;
+}
+#phone-window label,#email-window label{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+#phone-window input,#email-window input{
+    display: block;
+    text-align: left;
+    margin: auto;
+    margin-top:0px ;
+    width: 260px;
+}
 textarea{
     resize: vertical;
 }
