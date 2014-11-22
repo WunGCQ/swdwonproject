@@ -22,7 +22,7 @@ function warn(title,content,color){
         $("#warning-wrap").css({"border-color":color});
     }
     var windowHeight=document.documentElement.clientHeight;
-    $("#warning-window").css({"margin-top":(Math.floor((windowHeight-150)/2)).toString()+"px"});
+    $("#warning-window").css({"margin-top":(Math.floor((windowHeight-220)/2)).toString()+"px"});
     $("#warning").show();
 
 }

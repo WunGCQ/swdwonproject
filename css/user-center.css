@@ -291,7 +291,7 @@ form .btn[value="submit"]:hover,.btn[value="add-address"]:hover,.btn[value="subm
 }
 #nav-container .active{
     border-bottom: none;
-    border-top: 2px solid #28a4c9;
+    border-top: 2px solid #264d7b;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
 }
