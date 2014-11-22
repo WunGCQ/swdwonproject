@@ -13,7 +13,7 @@
         	$info = mysql_query("update user set u_status=1 where u_id=".$row['u_id'],$conn);
         	if(!$info)  $msg = "激活失败";
         	else $msg = '激活成功！';
-        	 
+        	header("Location: regist.php?flag=1"); 
    		} 
 	}
 	else{ 

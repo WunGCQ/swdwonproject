@@ -1,3 +1,7 @@
+<?php
+    $_flag = trim($_GET["flag"]);
+?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -7,6 +11,9 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>思维特：注册</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/regist.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/warning.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/warning.css"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/regist.css"/>
@@ -46,11 +53,11 @@
         <div id="regist-info-wrap" class="col-xs-10 col-xs-offset-1">
             <div id="step1">
                 <div class="col-xs-8">
-                    <form class="form-horizontal" role="form">
+                    <form id="reg" action="regchk.php" class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="input-Email" class="col-xs-3 col-xs-offset-1 control-label">用户名</label>
                             <div class="col-xs-7">
-                                <input type="text" class="form-control" id="input-username" placeholder="输入您的用户名" required="required">
+                                <input id="username" type="text" class="form-control" id="input-username" placeholder="输入您的用户名" required="required">
                             </div>
                         </div>
                         <div class="form-group">
@@ -59,13 +66,13 @@
                             </div>
                             <label for="input-Email" class="col-xs-3 control-label">电子邮箱</label>
                             <div class="col-xs-7">
-                                <input type="email" class="form-control" id="input-Email" placeholder="输入电子邮箱作为账户名" required="required">
+                                <input id="useremail" type="email" class="form-control" id="input-Email" placeholder="输入电子邮箱作为账户名" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input-Password" class="col-xs-3 col-xs-offset-1 control-label">登录密码</label>
                             <div class="col-xs-7">
-                                <input type="password" class="form-control" id="input-Password" placeholder="输入您的登录密码">
+                                <input id="password" type="password" class="form-control" id="input-Password" placeholder="输入您的登录密码">
                             </div>
                         </div>
                         <div class="form-group">
@@ -78,7 +85,7 @@
                         <div class="form-group">
                             <label for="input-Password-again" class="col-xs-3 col-xs-offset-1  control-label">确认登录密码</label>
                             <div class="col-xs-7">
-                                <input type="password" class="form-control" id="input-Password-again" placeholder="输入您的登录密码">
+                                <input id="password-again" type="password" class="form-control" id="input-Password-again" placeholder="输入您的登录密码">
                             </div>
                         </div>
                         <div class="form-group">
@@ -87,23 +94,22 @@
                             </div>
                             <label for="input-Email" class="col-xs-3 control-label">手机号码</label>
                             <div class="col-xs-7">
-                                <input type="email" class="form-control" id="input-Email" placeholder="输入您的手机号码" required="required">
+                                <input id="telephone" type="email" class="form-control" id="input-Email" placeholder="输入您的手机号码" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="input-Email" class="col-xs-3 col-xs-offset-1 control-label">图片验证码</label>
                             <div class="col-xs-3">
-                                <input type="email" class="form-control" id="input-Email" placeholder="" required="required">
+                                <input id="vcode" type="email" class="form-control" id="input-Email" placeholder="" required="required">
                             </div>
                             <div class="col-xs-4">
-                                <img src="" alt="验证码" />
-                                <a href="">看不清，换一张</a>
+                                <img id="vimage" src="code_num.php" alt="验证码" onclick="vcode_onclick()"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-offset-4 col-xs-10">
-                                <button type="button" class="btn btn-theme" onclick="stepTwo();">同意协议并注册</button>
+                                <button type="button" class="btn btn-theme" onclick="checkinfo();">同意协议并注册</button>
                             </div>
                         </div>
                         <div class="form-group">
@@ -122,11 +128,11 @@
                     <div class="col-xs-offset-1 col-xs-10" style="text-align:left;padding:15px;">
                         <p id="succcess-info">
                             <span class="fa fa-check"></span>
-                            邮件已发送到邮箱 <span id="target-email-address" style="font-weight: bold;">example@example.com</span>，请在48小时内点击邮件中的链接继续完成注册。
+                            邮件已发送到邮箱 <span id="target-email-address" style="font-weight: bold;"></span>，请在24小时内点击邮件中的链接继续完成注册。
                         </p>
                     </div>
                     <div class="col-xs-offset-1 col-xs-10" style="text-align:left;padding:0px 0px 30px 50px;border-bottom: 1px solid #ddd;">
-                        <button type="button" class="btn btn-theme">立即查收邮件</button>
+                        <button type="button" class="btn btn-theme" onclick="locaemail()">立即查收邮件</button>
                     </div>
                     <div class="col-xs-offset-1 col-xs-10" style="text-align:left;padding:15px;">
 
@@ -160,6 +166,10 @@
     }
 
     function stepTwo() {
+
+        var email = $("#useremail").val();
+        $("#target-email-address").text(email);
+        
         $("#step1").hide();
         $("#step2").show();
         $("#step3").hide();
@@ -181,4 +191,10 @@
 //    stepTwo();
 //    stepThree();
 </script>
+<?php  
+    if($flag == 1)
+    {
+        echo "<script type='text/javascript'>stepThree();</script>";
+    }
+?>
 </html>

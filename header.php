@@ -19,8 +19,8 @@
 				}
 				else
 				{
-			        echo "<span><a href=\"javascript:$('#login').show()\" id=\"show-login\">登录</a></span>";
-			        echo "<span><a href=\"javascript:$('#regist').show()\" id=\"show-regist\">注册</a></span>";
+			        echo "<span><a href=\"login.php\" id=\"show-login\">登录</a></span>";
+			        echo "<span><a href=\"regist.php\" id=\"show-regist\">注册</a></span>";
 				}
 			?>
 		</div>
