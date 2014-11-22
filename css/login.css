@@ -1,0 +1,37 @@
+body{
+    background-color: #f1f1f1;
+}
+.container{
+    width: 980px !important;
+    font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+#login-wrap{
+    padding: 30px 10px;
+}
+#username-icon,#password-icon{
+    text-align: center;
+    background-color: #285e8e;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px;
+}
+#password-icon{
+    background-color:#285e8e;
+}
+#username-input-wrap,#password-input-wrap{
+    padding: 0px;
+}
+#username-input,#password-input{
+    height: 50px;
+    width: 100%;
+    text-indent: 1em;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #285e8e;
+}
+#username-input:focus,#password-input:focus{
+    border-color: #285e8e;
+}
+.btn:hover{
+    background-color: #3071a9 !important;
+}

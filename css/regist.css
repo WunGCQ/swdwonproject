@@ -1,0 +1,237 @@
+.container{
+	width: 980px!important;
+}
+#header{
+	padding: 0px 20px;
+	height: 80px;
+	border-bottom: 1px solid #ddd;
+}
+#header>*{
+	display: inline-block;
+	font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+#header h1{
+	font-size: 36px;
+	font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+#header h2{
+	font-size: 24px;
+	color: #888;
+	font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+
+
+
+
+/*流程图栏*/
+#steps-reminder{
+	height: 80px;
+    padding-top: 20px;
+}
+#steps-reminder>div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.step-hr{
+	height: 3px;
+	/*background-color: #f60;*/
+	background-color: #ccc;
+	width: 160px;
+}
+
+.step{
+	text-align: center;
+	line-height: 30px;
+	margin: 8px 2px;
+	width: 36px;
+	height: 36px;
+	border-radius: 30px;
+	color: #fff;
+	/*background-color: #F57000;*/
+    background-color: #285e8e;
+	background-color: #aaa;
+	
+	/*border: 3px solid #FEBB37;*/
+    border: 3px solid #89b8ed;
+	border: 3px solid #ccc;
+	font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+}
+#steps{
+	margin-top: -15px;
+}
+#steps div{
+	display: inline-block;
+	color: #ccc;
+}
+
+.step-hr-active{
+	/*background-color: #f60;*/
+    background-color: #89b8ed;
+}
+.step-active{
+	/*background-color: #F57000;*/
+    background-color: #3783c3;
+	/*border: 3px solid #FEBB37;*/
+    border: 3px solid #89b8ed;
+}
+.steps-active{
+	color:#333 !important;
+}
+.form-control{
+	border-radius: 1px !important;
+}
+#regist-info-wrap{
+	border:1px solid #ccc;
+	margin-top: 20px;
+	padding-top:20px ;
+}
+#step1 .fa{
+	font-size: 20px;
+	color: #fff;
+    background-color: #3783c3;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 40px;
+}
+#regist-info-wrap .fa-mobile{
+	font-size: 30px;
+}
+
+#step1 label:before{
+	content: "*";
+	font-size: 16px;
+	color: #f00;
+	position: relative;
+	top: 5px;
+	left: -2px;
+}
+#check-password-safety{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+#check-password-safety>div{
+	background-color: #89b8ed;
+	margin:  0px 1px;
+	text-align: center;
+	color: #fff;
+	height: 20px;
+	padding: 0px;
+	
+}
+
+#step1{
+    /*display: none;*/
+}
+#regist-question-list li{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+
+
+#step2 .fa{
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(2, 171, 2, 0.98);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+  /*border-color: #66afe9;*/
+ border-color: #0088CC;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0px rgba(248,114,0, 0.6);
+  		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0px rgba(248,114,0, 0.6);
+}
+.btn-theme,.btn-theme:link,.btn-theme:visited{
+    background-color: #0088cc;
+    color: #fff !important;
+}
+.btn-theme:hover,.btn-theme:active{
+    background-color: #285e8e;
+    color: #fff;
+}
