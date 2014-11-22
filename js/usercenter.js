@@ -1,4 +1,3 @@
-var xmlHttp
 function changeTab(name){
 //    this.css({"color":"#005"});
 	var name=$("#"+name);
@@ -18,27 +17,4 @@ function showChangeAddressWindow(btnObj){
     $('#change-address input:nth-child(2)').val(Phone);
     $('#change-address textarea').val(Address);
     $('#change-address').show();
-}
-
-function GetXmlHttpObject()
-{
-    var xmlHttp=null;
-    try
-    {
-        // Firefox, Opera 8.0+, Safari
-        xmlHttp=new XMLHttpRequest();
-    }
-    catch (e)
-    {
-        //Internet Explorer
-        try
-        {
-            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-        }
-        catch (e)
-        {
-            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-    }
-    return xmlHttp;
 }

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="思维特" content="一个在线的软件商店">
+    <title>软件</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/cookie.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
+    <style>
+        body{
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 0px;
+            margin: 0px;
+            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #container{
+            width: 960px;
+            padding: 10px;
+            margin: 0px auto;
+            text-align: center;
+
+        }
+        #brief-info{
+            width: 100%;
+            height: 570px;
+            margin-top: -9px;
+            background-color: #eee;
+            text-align: center;
+        }
+        #brief-info-content{
+            margin: 0px auto;
+            height: 580px;
+            padding-top: 20px;
+            width: 1024px;
+        }
+        #brief-info-images,#brief-info-text{
+            display: inline-block;
+            vertical-align: top;
+            height: 500px;
+        }
+        #brief-info-images{
+            width: 500px;
+        }
+        #brief-info-text{
+            width: 480px;
+        }
+        #brief-info-text>*{
+            margin: 5px 20px;
+            padding: 20px;
+            font-size: 20px;
+            width: 100%;
+            text-align: justify;
+        }
+        #brief-info-images img{
+            max-height: 470px;
+        }
+        #product-name{
+            padding-top: 0px;
+            font-size: 20px;
+            color: #666;
+            border-bottom: 1px solid #ccc;
+        }
+        #product-price{
+            color: #f60;
+            font-size: 28px;
+            border-bottom: 1px solid #ccc;
+
+        }
+        #product-price:before{
+            content: "￥";
+        }
+        #select-amount-wrap{
+            border-bottom: 1px solid #ccc;
+        }
+        #select-amount-wrap>div{
+            display: inline-block;
+            vertical-align: top;
+        }
+        #amount-minus,#amount-add{
+            background-color: #dedede;
+            text-align: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #999;
+            cursor: pointer;
+            margin-top: 0px;
+            -webkit-user-select: none;
+        }
+        #amount-minus{
+            background-color: #f1f1f1;
+        }
+        #amount-number{
+            background-color: #fff;
+            text-align: center;
+            width: 48px;
+            height: 30px;
+            line-height: 28px;
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-left: none;
+            border-right: none;
+            margin: 0px -6px 0px -6px;
+            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+            outline: none;
+        }
+        #product-amount{
+            border-bottom: 1px solid #ccc;
+        }
+        #product-amount:before{
+            content: "库存:  ";
+        }
+        #buybuybuy .btn{
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #buy-now{
+            background-color:#EA5245;
+            margin-right: 20px;
+        }
+        #buy-now:hover{
+            background-color: #cc483c;
+        }
+        #add-to-shopping-cart{
+            background-color: #31A5E7;
+        }
+        #add-to-shopping-cart:hover{
+            background-color: #319ddd;
+        }
+        #product-nav-container{
+            width: 980px;
+            margin: 0px auto;
+            height: 40px;
+            padding: 0px;
+        }
+        #product-nav-container>div{
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: -5px;
+        }
+        .product-info{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            cursor: pointer;
+        }
+        #product-nav-container .active{
+            border-bottom: none;
+            border-top: 2px solid #28a4c9;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+        #product-nav-container .long{
+            height: 40px;
+            width: 580px;
+            border-bottom: 1px solid #ccc;
+        }
+        #tab-wrap{
+            width: 980px;
+            margin: 0px auto;
+        }
+        .tab{
+            display: none;
+            width: 100%;
+            height: auto;
+            padding: 20px;
+        }
+        .tab article{
+            text-align: left;
+            margin-left: 25px;
+        }
+        #tab-wrap .active{
+            display: block;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="header">
+    <div id="header-container">
+        <div id="logo-div">
+            思维特LOGO
+
+        </div>
+        <div id="header-user-block">
+            <span><a id="username">用户名</a></span>
+            <span><a id="shopping-cart">购物车</a></span>
+            <span><a href="javascript:$('#login').show()" id="show-login">登录</a></span>|
+            <span><a href="javascript:$('#regist').show()" id="show-regist">注册</a></span>
+        </div>
+
+    </div>
+
+</div>
+<div id="brief-info">
+    <div id="brief-info-content">
+        <div id="brief-info-images">
+            <img src="img/saber.jpg" alt=""/>
+        </div>
+        <div id="brief-info-text">
+            <div id="product-name">
+                Saber骑着摩托车奔驰在冬木市漆黑的夜路中绝尘而去，吾王赛高！
+            </div>
+            <div id="product-price">
+                666666
+            </div>
+            <div id="product-amount">
+                20
+            </div>
+            <div id="select-amount-wrap">
+                <div>数量：</div>
+                <div id="amount-minus" onclick="changeAmount(-1)">-</div>
+                <input id="amount-number" type="text" value="1"/>
+                <div id="amount-add" onclick="changeAmount(1)">+</div>
+            </div>
+            <div id="buybuybuy">
+                <div class="btn" id="buy-now">立即购买</div>
+                <div class="btn" id="add-to-shopping-cart">加入购物车</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <div id="product-nav-container">
+        <div class="product-info active" onclick="change_tab(this)">简介</div>
+        <div class="product-info" onclick="change_tab(this)">配置</div>
+        <div class="product-info" onclick="change_tab(this)">其他</div>
+        <div class="long"></div>
+    </div>
+    <div id="tab-wrap">
+        <div class="tab active">
+            <article>
+                <p>这里是正文1</p>
+            </article>
+
+        </div>
+        <div class="tab">
+            <article>
+                <p>这里是正文2</p>
+            </article>
+        </div>
+        <div class="tab">
+            <article>
+                <p>这里是正文3</p>
+            </article>
+        </div>
+    </div>
+</div>
+<div id="footer">
+
+</div>
+</body>
+<script>
+    function changeAmount(num){
+        var amount=$("#amount-number").val();
+        amount=parseInt(amount);
+        if(num==0){
+            return amount;
+        }
+        else if(num==-1){
+            if(amount>1){
+                if(amount==2){
+                    $("#amount-minus").css({"background-color":"#f1f1f1"});
+                }
+                amount--;
+                $("#amount-number").val(amount);
+            }
+            else{
+                $("#amount-minus").css({"background-color":"#f1f1f1"});
+                return false;
+            }
+        }
+        else if(num==1){
+            amount++;
+            $("#amount-minus").css({"background-color":"#ddd"});
+            $("#amount-number").val(amount);
+        }
+    }
+    function change_tab(TabObj){
+        var index= $(TabObj).index();
+        $(".product-info").attr("class","product-info");
+        $(TabObj).attr("class","product-info active");
+        $(".tab").attr("class","tab");
+        $(".tab:eq("+index.toString()+")").attr("class","tab active");
+    }
+
+</script>
+</html>
