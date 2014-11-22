@@ -51,6 +51,9 @@ body{
     line-height: 180px;
     border-bottom: 1px solid #eee;
 }
+#commodities-wrap{
+    text-align: left;
+}
 .commodity-pic img{
     max-width: 240px;
     max-height: 180px;
