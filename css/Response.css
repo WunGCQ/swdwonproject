@@ -1,0 +1,57 @@
+@media screen and (max-width:768px) {
+    #left-bar,.nav-bar{
+        width: 60px!important;
+    }
+    .logo-nav{
+        text-align: center;
+        padding-left: 0px;
+    }
+    .logo-nav:hover{
+        padding-left: 0px !important;
+    }
+    .company-logo{
+        height: 20px;
+    }
+    .nav-bar{
+        padding-left: 20px;
+    }
+    .nav-bar:hover{
+        padding-left: 20px;
+    }
+    .msg-block{
+        width: 65px;
+        padding: 0px 10px;
+    }
+    .user-info-block{
+        padding: 0px;
+    }
+    .exit-block{
+       padding: 0px 5px 0px 10px;
+    }
+    .aboutus-block{
+
+    }
+    #right-tab-block{
+        left:60px;
+    }
+
+
+    .circle-nav{
+        width:60px !important;
+        height:60px !important;
+    }
+    .circle-nav .fa{
+        margin-top: 13px !important;
+    }
+}
+@media screen and (min-width: 769px){
+    #left-bar,.nav-bar{
+        width: 150px;
+    }
+    .nav-bar span{
+        display: inline-block !important;
+    }
+    .msg-block{
+        width: 115px !important;
+    }
+}

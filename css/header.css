@@ -43,6 +43,10 @@ html{
 	margin: 0px 10px;
 	cursor: pointer;
 }
+#header img{
+    height: 60px;
+    margin-bottom: 10px;
+}
 #logo-div{
 	float: left;
 	line-height: 60px;

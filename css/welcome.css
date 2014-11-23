@@ -1,0 +1,118 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    display: block;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    /*background:url(../img/bgcollection05.jpg);*/
+    background-color: #F1F1F1;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    background: url(../img/bgcollection05.jpg) 50% 50% / cover no-repeat;
+}
+
+#login-block{
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
+    padding: 20px;
+    font-family: 'Microsoft Yahei',Helvetica, Arial, sans-serif;
+}
+#title{
+    background: #000;
+    color: #fff;
+    margin:-20px -20px 0px -20px;
+    padding: 15px 20px;
+}
+#title span{
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+#title a{
+    color: #aaa;
+    margin-left: 20px;
+}
+
+.underlined-input{
+    width: 80%;
+    margin: 30px 0px 0px 2px;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    outline: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-indent: 1em;
+}
+.underlined-input[type="password"]{
+    margin-bottom: 25px;
+}
+#login-block .fa{
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 20px;
+}
+#login-block .fa-user{
+    background-color: #1DB5C3;
+}
+#login-block .fa-lock{
+    background-color: #aaa;
+}
+#login-btn{
+    background-color: #27B5C3;
+    color: #fff;
+    border-radius: 0px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-left: 20px;
+    width: 80px;
+}
+#forget-pwd{
+    color:#27B5C3;
+    margin-left: 10px;
+}
+
+.intro-list{
+    margin-top: 30px;
+    list-style: none;
+}
+.intro-title h3{
+    color: #fff;
+}
+.intros{
+    font-size: 16px;
+    font-family: 'Microsoft Yahei',Helvetica, Arial, sans-serif;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-left: 40px;
+    margin-top: 20px;
+
+}
+.intros span:before{
+    content: url(../img/check.png);
+    display: block;
+    position: absolute;
+    margin-top: 2px;
+    margin-left:-34px;
+}
+
+#xs-title{
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+}
+#xs-title img{
+    height: 40px;
+}
+#footer{
+    position: absolute;
+    bottom:5px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,62 @@
+.ad-input{
+
+}
+#create-new-ad-form{
+    width: 700px;
+
+}
+#create-new-ad-form{
+
+}
+#create-new-ad-form label{
+    color: #333;
+}
+#create-new-ad-form tr{
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+#create-new-ad-form input,#create-new-ad-form textarea{
+    width:550px;
+}
+
+.table-for-form{
+    position: relative;
+    display: block;
+    border: none;
+    margin: 30px auto;
+    /*background-color: rgba(0,0,0,0.3);*/
+    background-color: #fff;
+    box-shadow: 0px 0px 1px 1px rgba(220,220,220,1);
+    padding: 0px 20px 20px 20px;
+}
+.form-title-cell h5{
+    color: #fff;
+    text-align: center;
+    font-family:'Microsoft Yahei',Helvetica, Arial, sans-serif;
+}
+.label-cell{
+    text-align: right;
+    line-height: 100%;
+}
+.btn-cell{
+    text-align: center;
+}
+.form-submit-btn{
+    width: auto !important;
+    padding: 8px 24px;
+    background: #1FB5AC;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    color: #ddd;
+    font-size: 14px;
+    font-family:'Microsoft Yahei',Helvetica, Arial, sans-serif;
+}
+.form-submit-btn:hover{
+    color: #fff;
+}
+.input-cell textarea{
+    resize: vertical;
+    color:#000;
+}
