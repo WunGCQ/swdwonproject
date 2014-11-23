@@ -275,9 +275,7 @@
         </div>
     </div>
 </div>
-<div id="footer">
-
-</div>
+<?php include("footer.php"); ?>
 </body>
 <script>
     function changeAmount(num){

@@ -49,9 +49,7 @@
 
     </article>
 </div>
-<div id="footer">
-
-</div>
+<?php include("footer.php") ?>
 </body>
 
 </html>

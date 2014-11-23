@@ -5,6 +5,8 @@
     $query = mysql_query("select * from user where u_id = '".$u_id."'",$conn);
     $info = mysql_fetch_array($query);
     $cart = $_SESSION["cart"];
+
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -136,6 +138,14 @@
                             <th width="120px">操作</th>
                         </tr>
                         <tbody>
+                            <?php
+
+                                foreach($cart as $x=>$x_value)
+                                {
+
+                                }
+
+                            ?>
                             <tr class="software">
                                 <td>商品名称</td>
                                 <td>20</td>
@@ -275,11 +285,7 @@
         </form>
     </div>
 </div>
-
-
-    <!--<div id="footer">-->
-
-    <!--</div>-->
+   <?php include("footer.php"); ?>
 </body>
 <script>
     $('.change-address').attr("onclick","showChangeAddressWindow(this)");
