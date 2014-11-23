@@ -146,19 +146,35 @@
 .address{
     padding: 5px;
     margin: 5px auto;
-    width: 463px !important;
+    width: 222px !important;
+    border: 2px solid #ccc;
+    display: inline-block;
+    height: 85px;
+    cursor: pointer;
+}
+#add-address-btn{
+    padding: 5px;
+    margin: 5px auto;
+    width: 222px !important;
     border: 2px solid #ccc;
     display: inline-block;
     cursor: pointer;
+    vertical-align: top;
+    height: 85px;
+    line-height: 85px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #264d7b;
 }
 .address>div {
     display: inline-block;
 }
 .address>div:first-child>div{
-    margin-top: 10px;
+    margin-top: 3px;
 }
 .address>div:first-child{
-    width: 463px !important;
+    width: 222px !important;
     text-align: left;
 }
 .address-name:before{
@@ -185,10 +201,10 @@
 .selected-address{
     border: 2px solid #264d7b;
     background-color: #e4eaff;
-    width: 463px!important;
+    width:222px!important;
 }
 .selected-address>div:first-child{
-    width: 463px !important;
+    width: 222px !important;
     text-align: left;
 }
 

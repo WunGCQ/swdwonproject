@@ -5,6 +5,7 @@
     <title>购物车</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/warning.js"></script>
+    <script src="js/usercenter.js"> </script>
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
@@ -93,11 +94,38 @@
                         <div class="address-address">填入地址考虑到地址比较长所以就留的长度大一些</div>
                     </div>
                 </div>
+                <div id="add-address-btn" onclick="$('#add-address').show();">
+                    添加地址
+                </div>
             </div>
             <div>
                 <button class="btn" type="button" value="submit" onclick="" style="margin-right:0px;width:150px;font-size: 20px;">结算</button>
             </div>
 
+        </div>
+    </div>
+    <div class="model-window" id="add-address">
+        <div class="window-main" id="address-window">
+            <span style="position:relative;float: right;font-size: 30px;cursor: pointer;" onclick="$('#add-address').hide();document.getElementById('add-address-form').reset();">×</span>
+            <form action=" " method="post" id="add-address-form">
+                <div class="form-group">
+                    <!--<label for="username">用户名</label>-->
+                    <input id="name" type="text" placeholder="请输入姓名" name="name" class="form-control"/>
+
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">密码</label>    -->
+                    <input id="telephone" type="text" placeholder="请输入手机号" name="phone" class="form-control"/>
+
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">密码</label>    -->
+                    <textarea id="address" placeholder="请输入收货地址" name="address" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <?php  echo "<button id=\"btn_addaddr\"class=\"btn\" type=\"button\" value=\"submit\" onclick=\"addAddr(".$u_id.")\">确认提交</button>"; ?>
+                </div>
+            </form>
         </div>
     </div>
 <!--<div id="warning">-->
@@ -172,6 +200,27 @@
         id=AddressObj.id;
         //TODO
         //在这里获取id~~和后续操作
+    }
+    function addAddr(u_id)
+    {
+        var a_name = $('#name').val();
+        var a_telephone = $('#telephone').val();
+        var a_address = $('#address').val();
+        $.ajax({
+            type: "POST",
+            url: "addaddr.php",
+            data: {u_id:u_id,a_name:a_name,a_telephone:a_telephone,a_address:a_address},
+            dataType: "text",
+            success: function(resText){
+                if(resText == "error"){
+                    alert("添加失败");
+                    return;
+                }
+                var innerHTML="<div class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div>"
+//                var innerHTML = "<div id=\""+"haha"+"\" class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div><div><div class=\"delete-address\">删除</div><div class=\"change-address\">修改</div></div></div>";
+                $(document.getElementById('add_address').parentNode ).before(innerHTML);
+            }
+        });
     }
     $(".amount-minus").attr("onclick","changeAmount(this,-1)");
     $(".amount-add").attr("onclick","changeAmount(this,1)");
