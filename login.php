@@ -48,18 +48,8 @@
                             <button class="btn" type="submit" value="login" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">登录</button>
                         </div>
                         <div class="col-sm-2">
-<<<<<<< HEAD
                             <a class="btn" href="getpwdurl.php" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</a>
-=======
-<<<<<<< HEAD:login.html
-                            <button class="btn" type="submit" value="find" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</button>
                         </div>
-=======
-                            <button class="btn" type="submit" value="login" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</button>
->>>>>>> 705b9b15af0b050c89448c8051d1d383cd9a43be
-                        </div>
-
->>>>>>> 15c103774d4f1cfd7e46fd27c5d102352c836f6a:login.php
                     </div>
                 </form>
             </div>

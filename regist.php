@@ -76,13 +76,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-xs-8 col-xs-offset-4" id="check-password-safety">
-                                <div class="col-xs-3">弱</div>
-                                <div class="col-xs-3">中</div>
-                                <div class="col-xs-3">强</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="input-Password-again" class="col-xs-3 col-xs-offset-1  control-label">确认登录密码</label>
                             <div class="col-xs-7">
                                 <input id="password-again" type="password" class="form-control" id="input-Password-again" placeholder="输入您的登录密码">
@@ -114,13 +107,13 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-offset-4 col-xs-10">
-                                <a href="" target="_blank">《思维客 服务协议》</a>
+                                <a href="legalNotices" target="_blank">《思维客 法律声明》</a>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-xs-4" style="border-left:1px solid #ddd;margin-top: 80px;padding: 15px 30px;">
-                    <p>思维客是国内然就大数据应用的领导企业，公司依托数年数据挖掘、数据处理以及互联网研发技术等经验，以互联网数据精准数据分析技术为核心驱动，通过整合媒体资源、分析互联网受众浏览访问行为，帮助客户从大数据角度获取更多的营销价值。</p>
+                    <p>思唯特元年为2013年。团队由来自八个不同学院，三所高校的小伙伴组成，中科大学霸，保研清华的技术大牛，美丽大方靠谱动人的六朵金花组成。思唯特因梦想而立，热爱而极致，专注的追求，必将带来无与伦比的产品体验。思唯特将用正版的力量改变这个世界！</p>
                 </div>
             </div>
             <div id="step2">
@@ -158,6 +151,7 @@
     </div>
     </div>
 </body>
+
 <script>
 
     function stepOne(){

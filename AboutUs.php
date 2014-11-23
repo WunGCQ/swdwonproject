@@ -13,21 +13,7 @@
     <link rel="stylesheet" href="css/staticpage.css"/>
 </head>
 <body>
-<div id="header">
-    <div id="header-container">
-        <div id="logo-div">
-            思维特LOGO
-
-        </div>
-        <div id="header-user-block">
-            <span><a id="username">用户名</a></span>
-            <span><a id="shopping-cart" href="javascript:changeTab('shoppingcart');">购物车</a></span>
-            <span><a href="#">注销</a></span>
-            <!--<span><a href="javascript:$('#login').show()" id="show-login">登录</a></span>|-->
-            <!--<span><a href="javascript:$('#regist').show()" id="show-regist">注册</a></span>-->
-        </div>
-    </div>
-</div>
+<?php include("header.php"); ?>
 <div id="container">
     <article>
         <h1>关于思维特</h1>
@@ -39,9 +25,7 @@
 
     </article>
 </div>
-<div id="footer">
-
-</div>
+<?php include("footer.php") ?>
 </body>
 
 </html>

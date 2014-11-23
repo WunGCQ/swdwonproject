@@ -21,6 +21,7 @@
 		{
 			$_SESSION["u_id"] = $info['u_id'];
     	    $_SESSION["u_name"] = $info['u_name'];
+    	    echo "<script language='javascript'>window.location='index.php';</script>";
         }
 	}
 	checkInput();

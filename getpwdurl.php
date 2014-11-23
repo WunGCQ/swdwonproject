@@ -108,7 +108,7 @@
 
 </head>
 <body>
-    <?php include("header.php"); ?>、
+    <?php include("header.php"); ?>
     <!--<form action="resetchk.php" method="post">-->
         <!--<p><strong>输入您注册的电子邮箱和用户名，找回密码：</strong></p> -->
         <!--<p><input type="text" class="input" name="username" id="username"><span id="chkmsg"></span></p>-->
@@ -136,5 +136,5 @@
             </form>
         </div>
     </div>
-
+    <?php include("footer.php"); ?>
 </body>

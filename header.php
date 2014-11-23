@@ -19,7 +19,7 @@
 				}
 				else
 				{
-			        echo "<span><a href=\"login.php\" id=\"show-login\">登录</a></span>";
+			        echo "<span><a href=\"login.php\" id=\"show-login\">登录</a></span>|";
 			        echo "<span><a href=\"regist.php\" id=\"show-regist\">注册</a></span>";
 				}
 			?>
