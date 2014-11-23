@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>思维特</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+    <script src="js/admin.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <h1>管理</h1>
+    <div id="nav-container">
+        <div class="long"></div>
+        <div class="nav-bar active" onclick="change_tab(this)">个人信息</div>
+        <div class="nav-bar" onclick="change_tab(this)">密码修改</div>
+        <div class="nav-bar" onclick="change_tab(this)">收货地址</div>
+        <div class="nav-bar" onclick="change_tab(this)">购物车</div>
+        <div class="long"></div>
+    </div>
+    <div id="tab-wrap">
+        <div id="admin-user" class="tab active">
+            用户：查看、删除
+        </div>
+        <div id="admin-order" class="tab">
+            查看
+        </div>
+        <div id="admin-software" class="tab">
+            CRUD（pic,text）
+        </div>
+        <div id="admin-snumber" class="tab">
+            序列号的增删（选择对应哪个商品）
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

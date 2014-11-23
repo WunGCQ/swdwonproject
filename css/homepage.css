@@ -1,0 +1,31 @@
+.circle-nav{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: #1FB5AC;
+    margin: 15px;
+    color: #fff;
+    cursor: pointer;
+    border: 6px solid #1CA39A;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.8);
+    font-family: 'Microsoft Yahei',Helvetica, Arial, sans-serif;
+    transition:background-color 0.5s,border-color 0.2s;
+    -moz-transition:background-color 0.5s,border-color 0.2s;
+    -webkit-transition:background-color 0.5s,border-color 0.2s;
+    -o-transition:background-color 0.5s,border-color 0.2s;
+}
+.circle-nav:hover{
+    background-color: #E56A64;
+    border-color: #f2aca4;
+}
+.circle-nav .hidden-xs{
+    font-family: 'Microsoft Yahei',Helvetica, Arial, sans-serif;
+}
+.circle-nav .fa{
+    display: block;
+    opacity: 0.94;
+    font-size: 24px;
+    margin-top: 25px;
+}
+

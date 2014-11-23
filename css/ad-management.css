@@ -1,0 +1,72 @@
+th{
+    text-align: center;
+}
+#manage-software-tab,#manage-user-tab,#numbers-tab,#add-number-block{
+    padding: 5px;
+}
+#manage-software-tab th,#manage-user-tab th,#numbers-tab th,#add-number-block th{
+    border: 2px solid #ccc;
+    border-collapse: separate;
+}
+
+#manage-software-tab td,#manage-user-tab td,#numbers-tab td,#add-number-block td{
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th{
+    text-align: center;
+}
+#manage-software-tab,#manage-user-tab,#numbers-tab,#add-number-block{
+    padding: 5px;
+}
+#manage-software-tab th,#manage-user-tab th,#numbers-tab th,#add-number-block th{
+    border: 2px solid #ccc;
+    border-collapse: separate;
+}
+
+#manage-software-tab td,#manage-user-tab td,#numbers-tab td,#add-number-block td{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+}
+
+.line-1,.line-2,.line-3,.line-4{
+    border-collapse: collapse;
+    border-left:2px solid #007095  !important ;
+    border-right:2px solid #007095 !important;
+}
+.line-4,.ad-img,.ad-content,#manage-software-tab .ad-operate{
+    border-bottom: 2px solid #007095 !important;
+}
+.ad-img img{
+    max-height: 200px;
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#manage-software-tab .btn,#manage-user-tab .btn,#numbers-tab .btn,#add-number-block.btn{
+    margin-top: 5px;
+}
+.delete-software,.change-software,.delete-user,.delete-number{
+    display: inline-block;
+    padding: 5px 10px;
+    width: 50px;
+    background-color: #900;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+.change-software{
+    background-color: #306da3;
+}
+
+.delete-software:hover,.delete-user:hover{
+    background-color: #600;
+}
+.change-software:hover{
+    background-color: #264d7b;
+}
