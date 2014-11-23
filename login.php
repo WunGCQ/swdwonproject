@@ -22,7 +22,7 @@
         </div>
         <div class="row" >
             <div class="col-sm-10 col-sm-offset-1" id="login-wrap" style="border-bottom: 1px solid #ccc;">
-                <form action="" method="">
+                <form action="logchk.php" method="post">
                     <div class="row">
                         <div class="col-sm-1 col-sm-offset-3" id="username-icon">
                             <span class="fa fa-user" style="color: #fff;font-size: 20px;"></span>
@@ -42,13 +42,13 @@
                     </div>
                     <div class="row" style="margin-top: 20px;">
                         <div class="col-sm-2 col-sm-offset-3" >
-                            <a class="btn" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">用户注册</a>
+                            <a class="btn" href="regist.php" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">用户注册</a>
                         </div>
                         <div class="col-sm-2">
                             <button class="btn" type="submit" value="login" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">登录</button>
                         </div>
                         <div class="col-sm-2">
-                            <button class="btn" type="submit" value="login" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</button>
+                            <a class="btn" href="getpwdurl.php" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</a>
                         </div>
 
                     </div>

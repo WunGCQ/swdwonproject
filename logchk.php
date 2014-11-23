@@ -21,7 +21,6 @@
 		{
 			$_SESSION["u_id"] = $info['u_id'];
     	    $_SESSION["u_name"] = $info['u_name'];
-            echo "<script>alert('管理员登录成功!');window.location='index.php';</script>";
         }
 	}
 	checkInput();
