@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div  id="header" class="col-xs-10 col-xs-offset-1">
-            <h1>思维特</h1>
+            <a href="index.php"><h1>思维特</h1></a>
             <h2>用户注册</h2>
             </div>
         </div>

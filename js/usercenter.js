@@ -184,7 +184,7 @@ function addAddr(u_id)
                 return;
             }
 
-            var innerHTML = "<div id=\""+"haha"+"\" class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div><div><div class=\"delete-address\">删除</div><div class=\"change-address\">修改</div></div></div>";
+            var innerHTML = "<div id="+resText+"\" class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div><div><div class=\"delete-address\">删除</div><div class=\"change-address\">修改</div></div></div>";
             $(document.getElementById('add_address').parentNode ).before(innerHTML);
         }
     });

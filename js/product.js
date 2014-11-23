@@ -15,7 +15,14 @@ function add_in_cart_onclick()
         data: {amount:amount,s_id:s_id},
         dataType: "text",
         success: function(resText){
-            //
+            if(resText == "success")
+            {
+                alert("添加成功");
+            }   
+            else
+            {
+                alert("添加失败");
+            }
         }
     });
 }
