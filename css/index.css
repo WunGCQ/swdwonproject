@@ -16,6 +16,9 @@ body{
     padding-bottom: 120px;
 	
 }
+#nav{
+    padding-left: 0px;
+}
 #nav li{
 	margin: 0px;
 	display: inline-block;

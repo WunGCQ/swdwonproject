@@ -92,7 +92,7 @@
                 <div class="circle-nav"><span class="fa fa-pencil"></span><span class="hidden-xs">添加商品</span></div>
                 <div class="circle-nav"><span class="fa fa-star"></span><span class="hidden-xs">修改商品</span></div>
                 <div class="circle-nav"><span class="fa fa-wrench"></span><span class="hidden-xs">管理商品</span></div>
-                <div class="circle-nav"><span class="fa fa-user"></span>&nbsp;<span class="hidden-xs">用户管理</span></div>
+                <div class="circle-nav"><span class="fa fa-user"></span><span class="hidden-xs">用户管理</span></div>
                 <div class="circle-nav"><span class="fa fa-table"></span><span class="hidden-xs">号码列表</span></div>
                 <div class="circle-nav"><span class="fa fa-cloud"></span><span class="hidden-xs">添加号码</span></div>
                 <div class="circle-nav"><span class="fa fa-cogs"></span><span class="hidden-xs">修改配置</span></div>

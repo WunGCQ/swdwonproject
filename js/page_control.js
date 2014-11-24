@@ -121,3 +121,8 @@ function changeTabByLeftBar(obj){
     }
 }
 
+
+function getSelectedTrObj(Obj){
+    return $(Obj.parentNode.parentNode);
+}
+
