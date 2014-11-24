@@ -83,11 +83,11 @@ function delete_nowsoftware(s_id)
 
 function jumpto_change(btnObj)
 {
-<<<<<<< HEAD
+
     $(".nav-bar").attr("class","nav-bar");
-=======
+
 	$(".nav-bar").attr("class","nav-bar");
->>>>>>> 39dfbd06d0e999c4aad5c9ec7cccf6aa05f1c78e
+
     $(".tab-block").attr("class","tab-block");
     $(document.getElementsByClassName("nav-bar")[2]).attr("class","nav-bar nav-active");
     $(document.getElementsByClassName("tab-block")[2]).attr("class","tab-block active-tab");
