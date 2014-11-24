@@ -2,8 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="名称" content="特准客">
-    <meta name="特准客 简介" content="简介">
+    <meta name="名称" content="思维特">
+    <meta name="思维特 登录" content="登录">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思维特:用户登录</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -20,8 +20,11 @@
     <?php include("header.php"); ?>
 
     <div id="container">
+        <div class="row" style="text-align: center;margin-top: 50px;font-family:'微软雅黑','Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">
+            <h1>思维特 用户登录</h1>
+        </div>
         <div class="row" >
-            <div class="col-sm-10 col-sm-offset-1" id="login-wrap" style="border-bottom: 1px solid #ccc;">
+            <div class="col-sm-10 col-sm-offset-1" id="login-wrap" style="margin-top: 10px;">
                 <form action="logchk.php" method="post">
                     <div class="row">
                         <div class="col-sm-1 col-sm-offset-3" id="username-icon">

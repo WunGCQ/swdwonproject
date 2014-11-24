@@ -16,9 +16,10 @@
     width: 100px;
 }
 #footer table td{
-    height: 30px;
-    text-align: left;
+    height: 36px;
+    text-align: center;
     font-size: 14px;
+    line-height: 36px;
 }
 #footer a,#nav a{
     color:#111;

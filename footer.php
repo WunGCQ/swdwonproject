@@ -10,13 +10,13 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr style="border-bottom: 1px solid #ccc;">
+            <tr>
                 <td></td>
                 <td> <strong>帮助说明</strong> </td>
                 <td><a href="Delivery.php">配送方式</a></td>
                 <td><a href="aftersale.php">售后服务</a></td>
                 <td><a href="paymentHelp.php">付款帮助</a></td>
-                <td></td>
+                <td> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1115011626&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1115011626:51" alt="欢迎咨询" title="欢迎咨询"/></a></td>
             </tr>
             <tr>
                 <td></td>

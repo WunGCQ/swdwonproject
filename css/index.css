@@ -16,17 +16,18 @@ body{
     padding-bottom: 120px;
 	
 }
-#nav{
-    padding-left: 0px;
+#nav div{
+  display: inline-block;
 }
-#nav li{
+#nav .nav-div{
 	margin: 0px;
 	display: inline-block;
     padding: 10px 10px;
     width: 80px;
 }
-#nav li:hover{
-    background-color: #f5f5f5;
+#nav .long{
+    border-bottom: 1px solid #ddd;
+    width:100px ;
 }
 #commodities-wrap{
     width: 835px;
