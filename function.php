@@ -6,7 +6,7 @@
 		return date("Ymdhis").rand(1000,9999);
 	}
 
-	function sendEmails($to,$subject,$body)
+	function sendEmails($to,$subject,$body,$semail,$semail_password)
 	{ 
 		require("./phpmailer/class.phpmailer.php");//调用   
 		$mail = new PHPMailer();//实例化phpmailer   
@@ -14,9 +14,9 @@
 		$mail->IsSMTP(); // 设置发送邮件的协议：SMTP   
 		$mail->Host = "smtp.163.com"; // 发送邮件的服务器   
 		$mail->SMTPAuth = true; // 打开SMTP   
-		$mail->Username = "buaaxiaomi@163.com"; // SMTP账户   
-		$mail->Password = "w23x24p16xiaomi"; // SMTP密码   
-		$mail->From = "buaaxiaomi@163.com";   
+		$mail->Username = trim($semail); // SMTP账户   
+		$mail->Password = trim($semail_password); // SMTP密码   
+		$mail->From = trim($semail);
 		$mail->FromName = "思维特软件商店";   
 		$mail->AddAddress("$address", "");   
 		//$mail->AddAddress(""); // name is optional   
@@ -38,8 +38,23 @@
 		return 1;//发送成功显示的信息     
 	}
 
-	function getaddress($u_id)
+	function UploadImage($filepath)
 	{
-		$ans = mysql_query("select * from address where u_id = '".$u_id);
+	    $type = $_FILES[$filepath]['type'];
+		if($type=='image/jpg'|| $type=='image/jpeg'||$type=='image/pjpeg')
+		{
+			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
+			date_default_timezone_set('Etc/GMT-8');
+  			$photo=date("Ymdhis").rand(100,999).$ext;
+  			$ans = move_uploaded_file( $_FILES[$filepath]['tmp_name'] , 'img/'.$photo );
+  			if($ans) return 'img/'.$photo;
+  			else return -1;
+		}
+		return -2;
+	}
+
+	function DeleteImage($imagepath)
+	{
+		unlink("img/".$imagepath);
 	}
 ?>

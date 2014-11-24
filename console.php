@@ -7,6 +7,8 @@
     <!--<script src="foundation/js/foundation.min.js"></script>-->
     <script src="js/page_control.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/ajaxfileupload.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <!--<script src="js/bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css"/>
@@ -99,7 +101,7 @@
 
 
         </div>
-        <div class="tab-block hidden-tab" id="create-software-tab">
+        <div id="add_new_software" class="tab-block hidden-tab" id="create-software-tab">
             <h3 class="tab-title">
                 添加商品
             </h3>
@@ -108,35 +110,29 @@
                 <div class="row">
                     <span style="margin-bottom: 10px;display: block;">请填写商品信息</span>
                 </div>
-                <form class="form-horizontal" role="form">
+                <form name="form" action="" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="create-software-name" class="visible-lg col-lg-3 control-label">商品名称</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="create-software-name" id="create-software-name" placeholder="请填写商品名称" />
+                            <input id="nsw_name" type="text" class="form-control" name="create-software-name" placeholder="请填写商品名称" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="create-software-intro" class="visible-lg col-lg-3 control-label">商品介绍</label>
+                        <label for="create-software-name" class="visible-lg col-lg-3 control-label">软件发行商</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <textarea type="text" class="form-control" name="create-software-intro" id="create-software-intro" placeholder="请填写商品介绍"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="create-software-setting" class="visible-lg col-lg-3 control-label">商品配置</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="create-software-setting" id="create-software-setting" placeholder="请填写商品配置" />
+                            <input id="nsw_manu" type="text" class="form-control" name="create-software-name" placeholder="请填写软件发行商" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="create-software-price" class="visible-lg col-lg-3 control-label">商品价格</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="number" class="form-control" name="create-software-price" id="create-software-price" placeholder="请填写商品价格" />
+                            <input id="nsw_price" type="number" class="form-control" name="create-software-price" placeholder="请填写商品价格" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="create-software-content" class="visible-lg col-lg-3 control-label">商品类别</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 " >
-                            <select class="form-control" name="create-software-type" id="create-software-content">
+                            <select id="nsw_cate" class="form-control" name="create-software-type" >
                                 <option value ="1">类别一</option>
                                 <option value ="2">类别二</option>
                                 <option value="3">类别叁</option>
@@ -145,19 +141,25 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="create-software-intro" class="visible-lg col-lg-3 control-label">商品介绍</label>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+                            <textarea id="nsw_introd" type="text" class="form-control" name="create-software-intro" placeholder="请填写商品介绍"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-software-setting" class="visible-lg col-lg-3 control-label">商品配置</label>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+                            <input id="nsw_req" type="text" class="form-control" name="create-software-setting" placeholder="请填写商品配置" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="create-software-thumb" class="visible-lg col-lg-3 control-label">选择预览图</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="file" class="form-control" name="create-software-thumb" id="create-software-thumb" />
+                            <input id="nsw_image" type="file" class="form-control" name="nsw_image"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="create-software-pic" class="visible-lg col-lg-3 control-label">选择介绍图片</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="file" class="form-control" name="create-software-pic" id="create-software-pic" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-basic" id="create-software-submit-btn">添加商品</button>
+                        <button id="add_software" type="button" class="btn btn-basic">添加商品</button>
                     </div>
 
 
@@ -172,41 +174,30 @@
                 <div class="row">
                     <span style="margin-bottom: 10px;display: block;">请填写商品信息</span>
                 </div>
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="software-id" class="visible-lg col-lg-3 control-label">填写商品id</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="software-id" id="software-id" placeholder="请填写商品名称" />
-                        </div>
-                    </div>
+                <form id="change_now_software" class="form-horizontal" role="form">
+                    <input id="csw_id" type="hidden" />
                     <div class="form-group">
                         <label for="change-software-name" class="visible-lg col-lg-3 control-label">商品名称</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="change-software-name" id="change-software-name" placeholder="请填写商品名称" />
+                            <input id="csw_name" type="text" class="form-control" name="change-software-name" id="change-software-name" placeholder="请填写商品名称" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="change-software-intro" class="visible-lg col-lg-3 control-label">商品介绍</label>
+                        <label for="change-software-price" class="visible-lg col-lg-3 control-label">软件发行商</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <textarea type="text" class="form-control" name="change-software-intro" id="change-software-intro" placeholder="请填写商品介绍"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="change-software-setting" class="visible-lg col-lg-3 control-label">商品配置</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="change-software-setting" id="change-software-setting" placeholder="请填写商品配置" />
+                            <input id="csw_manu" type="number" class="form-control" name="change-software-price" placeholder="请填写软件发行商" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="change-software-price" class="visible-lg col-lg-3 control-label">商品价格</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="number" class="form-control" name="change-software-price" id="change-software-price" placeholder="请填写商品价格" />
+                            <input id="csw_price" type="number" class="form-control" name="change-software-price" placeholder="请填写商品价格" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="change-software-content" class="visible-lg col-lg-3 control-label">商品类别</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 " >
-                            <select class="form-control" name="change-software-content" id="change-software-content">
+                            <select id="csw_cate" class="form-control" name="change-software-content">
                                 <option value ="1">类别一</option>
                                 <option value ="2">类别二</option>
                                 <option value="3">类别叁</option>
@@ -215,19 +206,25 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="change-software-intro" class="visible-lg col-lg-3 control-label">商品介绍</label>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+                            <textarea id="csw_introd"type="text" class="form-control" name="change-software-intro" placeholder="请填写商品介绍"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="change-software-setting" class="visible-lg col-lg-3 control-label">商品配置</label>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+                            <input id="csw_req" type="text" class="form-control" name="change-software-setting" placeholder="请填写商品配置" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="change-software-thumb" class="visible-lg col-lg-3 control-label">选择预览图</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="file" class="form-control" name="change-software-thumb" id="change-software-thumb" />
+                            <input id="csw_image" type="file" class="form-control" name="change-software-thumb"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="change-software-pic" class="visible-lg col-lg-3 control-label">选择介绍图片</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="file" class="form-control" name="change-software-pic" id="change-software-pic" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-basic" id="change-software-submit-btn">修改商品</button>
+                        <button id="change_software" type="button" class="btn btn-basic">修改商品</button>
                     </div>
 
 
@@ -247,28 +244,35 @@
                         <th style="width: 10%">缩略图</th>
                         <th style="width: 10%">介绍</th>
                         <th style="width: 10%">类别</th>
-                        <th style="width: 10%">介绍图片</th>
+                        <th style="width: 10%">发行商</th>
                         <th style="width: 10%">配置</th>
                         <th style="width: 10%">价格</th>
                         <th style="width: 10%">操作</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>id</td>
-                        <td>name</td>
-                        <td>thumb</td>
-                        <td>intro</td>
-                        <td>category</td>
-                        <td>pic</td>
-                        <td>settings</td>
-                        <td>price</td>
-                        <td>
-                            <span class="change-software">修改</span>
-                            <span class="delete-software">删除</span>
-                        </td>
-                    </tr>
-
+                <?php
+                    include("conn/conn.php");
+                    $query = mysql_query("select * from software order by s_id desc");
+                    while($info = mysql_fetch_array($query))
+                    {
+                        echo "   
+                        <tr id='software".$info["s_id"]."'>
+                            <td>".$info["s_id"]."</td>
+                            <td>".$info["s_name"]."</td>
+                            <td><img src='".$info["s_imagepath"]."' style=\"width:50px;height:50px;\" /></td>
+                            <td>".$info["s_cate"]."</td>
+                            <td>".$info["s_price"]."</td>
+                            <td>".$info["s_manufac"]."</td>
+                            <td>".$info["s_introd"]."</td>
+                            <td>".$info["s_requirement"]."</td>
+                            <td>
+                                <span class=\"change-software\" onclick=jumpto_change('".$info["s_id"]."')>修改</span>
+                                <span class=\"delete-software\" onclick=delete_nowsoftware('".$info["s_id"]."')>删除</span>
+                            </td>
+                        </tr>";
+                    }
+                ?>change_nowsoftware
                 </tbody>
             </table>
 
@@ -279,25 +283,40 @@
             </h3>
             <table style="width: 100%">
                 <thead>
-                <tr>
+                <tr id="manage-user-tab-head">
                     <th style="width: 10%">id</th>
                     <th style="width: 10%">用户名</th>
                     <th style="width: 15%">手机号</th>
                     <th style="width: 15%">邮件地址</th>
+                    <th style="width: 5%">状态</th>
                     <th style="width: 5%">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>name</td>
-                    <td>phone</td>
-                    <td>email</td>
-                    <td>
-                        <span class="delete-user">删除</span>
-                    </td>
-                </tr>
-
+                <?php
+                    include("conn/conn.php");
+                    $query = mysql_query("select * from user where u_isadmin = '0' order by u_id desc",$conn);
+                    while($info = mysql_fetch_array($query))
+                    {
+                        echo "
+                              <tr id='user".$info["u_id"]."'>
+                                <td>".$info["u_id"]."</td>
+                                <td>".$info["u_name"]."</td>
+                                <td>".$info["u_telephone"]."</td>
+                            ";
+                            if($info["u_status"] == 1) 
+                                echo "<td><font color='green'>已激活</font></td>";
+                            else
+                                echo "<td><font color='red'>未激活</font></td>";
+                        echo "
+                            <td>".$info["u_email"]."</td>
+                                <td>
+                                    <span class=\"delete-user\" onclick=\"delete_user('".$info["u_id"]."')\">删除</span>
+                                </td>
+                                </tr>
+                        ";
+                    }
+                ?>
                 </tbody>
             </table>
         </div>
@@ -315,17 +334,32 @@
                     <th style="width: 5%">操作</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>id</td>
-                    <td> 12332112345677654321 0xdeadbeef </td>
-                    <td>ps cc</td>
-                    <td>可用</td>
-                    <td>
-                        <span class="delete-number">删除</span>
-                    </td>
-                </tr>
+                <tbody id="sn_number_head">
+                <?php
+                    include("conn/conn.php");
+                    $query = mysql_query("select sn_id,sn_number,sn_issale,s_name from s_number,software where s_number.s_id = software.s_id order by sn_id desc",$conn);
+                    while($info = mysql_fetch_array($query))
+                    {
+                        echo "
+                            <tr id='snumber".$info["sn_id"]."'>
+                                <td>".$info["sn_id"]."</td>
+                                <td>".$info["sn_number"]."</td>
+                                <td>".$info["s_name"]."</td>
+                            ";
+                        if($info["sn_issale"] == 1) 
+                            echo "<td><font color='red'>已使用</font></td>";
+                        else
+                            echo "<td><font color='green'>未使用</font></td>";
 
+                        echo "
+                            <td>
+                                <span class=\"delete-number\" onclick=\"delete_snumber('".$info["sn_id"]."')\">删除</span>
+                            </td>
+                            </tr>
+                        ";
+                    }
+
+                ?>
                 </tbody>
             </table>
         </div>
@@ -349,15 +383,19 @@
                         <label for="add-number-software" class="visible-lg col-lg-3 control-label">所属软件</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 " >
                             <select class="form-control" name="add-number-software" id="add-number-software">
-                                <option value ="1">软件1</option>
-                                <option value ="2">软件2</option>
-                                <option value="3">软件3</option>
-                                <option value="4">软件4</option>
+                                <?php
+                                    include("conn/conn.php");
+                                    $query = mysql_query("select s_id,s_name from software",$conn);
+                                    while($info = mysql_fetch_array($query))
+                                    {
+                                        echo "<option value ='".$info["s_id"]."'>".$info["s_name"]."</option>";
+                                    }
+                                ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-basic" id="add-number-submit-btn">添加序列号</button>
+                        <button type="button" class="btn btn-basic" id="add-number-submit-btn" onclick="add_snnumber()">添加序列号</button>
                     </div>
 
 
@@ -374,28 +412,41 @@
                     <span style="margin-bottom: 10px;display: block;">在这里可以修改你的个人配置</span>
                 </div>
                 <form class="form-horizontal" role="form">
-
+                    <?php 
+                        $file = fopen("files/config.txt", "r") or die("Unable to open file!");
+                        $domain = fgets($file);
+                        $remail = fgets($file);
+                        $semail = fgets($file);
+                        $semail_password = fgets($file);
+                        fclose($file);
+                    ?>
                     <div class="form-group">
                         <label for="change-domain-name" class="visible-lg col-lg-3 control-label">域名</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="text" class="form-control" name="change-domain-name" id="change-domain-name" placeholder="请填写您的域名"/>
+                            <input type="text" class="form-control" name="change-domain-name" id="change-domain-name" placeholder="请填写您的域名" value=<?php echo "'".$domain."'"?>/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="change-receive-email" class="visible-lg col-lg-3 control-label">接受订单的邮箱</label>
+                        <label for="change-receive-email" class="visible-lg col-lg-3 control-label">订单提醒邮箱</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="email" class="form-control" name="change-receive-email" id="change-receive-email" placeholder="请填写接受订单的邮箱"/>
+                            <input type="email" class="form-control" name="change-receive-email" id="change-receive-email" placeholder="请填写接受订单的邮箱" value=<?php echo "'".$remail."'"?>/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="change-send-email" class="visible-lg col-lg-3 control-label">发送邮件的邮箱</label>
+                        <label for="change-send-email" class="visible-lg col-lg-3 control-label">发送邮件邮箱</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input type="email" class="form-control" name="change-send-email" id="change-send-email" placeholder="请填写发送邮件的邮箱"/>
+                            <input type="email" class="form-control" name="change-send-email" id="change-send-email" placeholder="请填写发送邮件的邮箱" value=<?php echo "'".$semail."'"?>/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="change-send-email" class="visible-lg col-lg-3 control-label">发送邮件邮箱密码</label>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+                            <input type="password" class="form-control" name="change-send-email" id="change-send-email-password" placeholder="请填写发送邮件的邮箱" value=<?php echo "'".$semail_password."'"?>/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <button type="button" class="btn btn-basic" id="change-settings-submit-btn">保存配置</button>
+                        <button type="button" class="btn btn-basic" id="change-settings-submit-btn" onclick="changeconfig()">保存配置</button>
                     </div>
 
 
@@ -408,6 +459,7 @@
 </div>
 <script>
     _init();
+    $("#add_software").attr("onclick","add_newsoftware()");
 </script>
 </body>
 </html>

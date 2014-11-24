@@ -120,3 +120,4 @@ function changeTabByLeftBar(obj){
         $("#"+TabName).attr("class","tab-block active-tab");
     }
 }
+

@@ -28,7 +28,6 @@
         $info[$x] = $list;
         $x = $x + 1;
     }
-    //unset($_SESSION["cart"]);
 
     if($_SESSION["u_id"])
     {
