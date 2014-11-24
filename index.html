@@ -7,7 +7,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/cookie.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
@@ -29,14 +29,42 @@
 		</div>
 	</div>
 	<div id="container">
-		<ul id="nav">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">Apple商品</a></li>
-			<li><a href="#">Adobe商品</a></li>
-            <li><a href="#">使用说明</a></li>
-            <li><a href="#">关于我们</a></li>
-			<li></li>
-		</ul>
+		<div id="nav">
+			<div class="nav-div" onmouseover="showListMenu('appstore-menu')" onmouseout="hideListMenu('appstore-menu')">
+                Apple Store
+                <ul class="list-menu" id="appstore-menu"  >
+                    <li><a href="">选项一</a></li>
+                    <li><a href="">选项afa</a></li>
+                    <li><a href="">选fow3e</a></li>
+                </ul>
+            </div>
+			<div class="nav-div"  onmouseover="showListMenu('adobe-menu')" onmouseout="hideListMenu('adobe-menu')">
+                Adobe商品
+                <ul class="list-menu" id="adobe-menu"  >
+                    <li><a href="">选项一</a></li>
+                    <li><a href="">选项afa</a></li>
+                    <li><a href="">选fow3e</a></li>
+                </ul>
+            </div>
+            <div class="nav-div"  onmouseover="showListMenu('x-menu')" onmouseout="hideListMenu('x-menu')">
+                使用说明
+                <ul class="list-menu" id="x-menu"  >
+                    <li><a href="">选项一</a></li>
+                    <li><a href="">选项afa</a></li>
+                    <li><a href="">选fow3e</a></li>
+                </ul>
+            </div>
+            <div class="nav-div"   onmouseover="showListMenu('us-menu')" onmouseout="hideListMenu('us-menu')" >
+                关于我们
+                <ul class="list-menu" id="us-menu">
+                    <li><a href="">选项一</a></li>
+                    <li><a href="">选项afa</a></li>
+                    <li><a href="">选fow3e</a></li>
+                </ul>
+            </div>
+        </div>
+
+
         <div id="commodities-wrap">
             <div class="commodity">
                 <div class="commodity-pic">
@@ -133,7 +161,7 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr style="border-bottom: 1px solid #ccc;">
+            <tr style="border-bottom: 1px sodivd #ccc;">
                 <td></td>
                 <td> <strong>帮助说明</strong> </td>
                 <td><a href="">配送方式</a></td>
@@ -233,4 +261,16 @@
 		</form>
 	</div>
 </div>
+<script>
+    function showListMenu(name){
+        var ListMenu=document.getElementById(name);
+        $(ListMenu).show();
+//        ListMenu.style.display="block";
+    }
+    function hideListMenu(name){
+        var ListMenu=document.getElementById(name);
+        $(ListMenu).hide();
+//        ListMenu.style.display="none";
+    }
+</script>
 </html>

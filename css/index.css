@@ -16,23 +16,76 @@ body{
     padding-bottom: 120px;
 	
 }
+#nav{
+    margin: auto;
+    padding: 0px;
+    border: 1px solid #ddd;
+    width: 835px;
+    background-color: rgba(0,0,0,0.8);
+    /*background-color: rgba(66,139,202,0.9);*/
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+
+}
 #nav div{
   display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    cursor: pointer;
 }
 #nav .nav-div{
-	margin: 0px;
+	margin: 0px 10px;
 	display: inline-block;
-    padding: 10px 10px;
+    padding: 15px 20px;
     width: 80px;
 }
-#nav .long{
-    border-bottom: 1px solid #ddd;
-    width:100px ;
+
+.list-menu{
+    position: absolute;
+    display: none;
+    margin-top:15px;
+    margin-left: -10px;
+    width: 120px;
+    color: #ffffff;
+
+    /*background-color: rgba(66,139,202,0.9);*/
+    background-color: rgba(0,0,0,0.8);
+    -webkit-padding-start:0px;
 }
+.list-menu li{
+    display: block;
+    padding: 5px 20px;
+    font-size: 14px;
+    list-style: none;
+    cursor:pointer;
+    text-align: left ;
+    height: 30px;
+    line-height: 30px;
+    transition:padding-left 0.3s,background-color 0.3s;
+    -moz-transition:padding-left 0.3s,background-color 0.3s; /* Firefox 4 */
+    -webkit-transition:padding-left 0.3s,background-color 0.3s; /* Safari and Chrome */
+    -o-transition:padding-left 0.3s,background-color 0.3s; /* Opera */
+}
+
+.list-menu li:hover{
+    padding-left: 25px;
+    background-color: rgba(0,0,0,0.2);
+    /*background-color: #F48367;*/
+}
+.list-menu a,.list-menu a:link,.list-menu a:visited,.list-menu a:hover,.list-menu a:active{
+    color: #fff !important;
+}
+
+
+
+
+
+
+
 #commodities-wrap{
-    width: 835px;
+    width: 830px;
     margin: 10px auto;
     padding: 0px;
+    padding-left: 3px;
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.2);
 }
 #commodities-wrap>div{
@@ -45,7 +98,10 @@ body{
     cursor:default;
 }
 #commodities-wrap>div:hover{
-    background-color: #f8f8f8;
+    background-color: #ddd;
+}
+.commodity{
+    text-align: center;
 }
 .commodity-pic{
     display: block;
@@ -63,6 +119,8 @@ body{
     max-width: 240px;
     max-height: 180px;
     cursor: pointer;
+    margin: auto;
+
 }
 .commodity-info{
     width: 240px;
