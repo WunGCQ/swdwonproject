@@ -1,4 +1,6 @@
 <?php
+	
+	$_SESSION["cart"] = array();
 	unset($_SESSION["cart"]);
 
 	include("conn/conn.php");
@@ -117,7 +119,7 @@
 	include("prodHtmlEmail.php");
 	include("readconfig.php");
 
-	if($arr["user_id"] != -1 && $user_status == 1)
+	/*if($arr["user_id"] != -1 && $user_status == 1)
 	{
 		$to = $user_email;
 		$subject = "订单通知";
@@ -128,11 +130,11 @@
 			echo "mail error";
 			exit;
 		}	
-	}
+	}*/
 	//echo "user";
 
 	//管理员订单通知
-	$to = $remail;
+	/*$to = $remail;
 	$subject = "新订单通知";
 	$body = send_to_admin($admin_content);
 
@@ -140,7 +142,7 @@
 	{
 		echo "mail error";
 		exit;
-	}	
+	}	*/
 	echo "success";
 
 

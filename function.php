@@ -72,6 +72,7 @@
 	function UploadImage($filepath)
 	{
 	    $type = $_FILES[$filepath]['type'];
+
 		if($type=='image/jpg'|| $type=='image/jpeg'||$type=='image/pjpeg')
 		{
 			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
@@ -86,6 +87,9 @@
 
 	function DeleteImage($imagepath)
 	{
-		unlink("img/".$imagepath);
+		if(is_file($imagepath))
+		{
+			unlink($imagepath);
+		}
 	}
 ?>

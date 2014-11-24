@@ -219,7 +219,7 @@
 <div id="brief-info">
     <div id="brief-info-content">
         <div id="brief-info-images" style="display:inline-block;">
-            <img src="img/saber.jpg" alt=""/>
+            <?php echo "<img src='".$info["s_imagepath"]."'>" ?>
         </div>
         <div id="brief-info-text" style="display:inline-block;">
             <div id="product-name">

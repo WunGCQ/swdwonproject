@@ -151,16 +151,17 @@ function change_nowsoftware() {
 	$.ajaxFileUpload
 	(
 		{
-			url:'chg_software.php',
+			url:'chgsoftware.php',
 			secureuri:false,
 			fileElementId:'csw_image',
 			dataType: 'text',
 			data:{s_id:id,s_name:name,s_price:price,s_manufac:manu,s_introd:introd,s_imagepath:image,s_cate:cate,s_requirement:req},
 			success: function (resText)
 			{
+				console.log(resText);
 				if(resText == "success")
 				{
-					alert("新增商品成功");
+					alert("修改商品成功");
 					//$("#add_new_software").
 				}
 				else

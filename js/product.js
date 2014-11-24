@@ -44,7 +44,7 @@ function buy_now()
         data: {amount:amount,s_id:s_id},
         dataType: "text",
         success: function(resText){
-            window.location.href="index.php";
+            window.location="shoppingcart.php";
         }
     });
 }

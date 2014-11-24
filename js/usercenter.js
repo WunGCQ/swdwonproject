@@ -81,8 +81,21 @@ function changeAmount(Obj,num){
     }
 
     function delete_tab(Obj){
-        console.log(Obj);
-        (Obj.parentNode.parentNode).remove();
+        Obj = Obj.parentNode.parentNode;
+        var id = $(Obj).attr('id').substring(4);
+        
+        $.ajax({
+            type: "POST",
+            url: "del_cart_sw.php",
+            data: {s_id:id},
+            dataType: "text",
+            success: function(resText){
+                if(resText == "success")
+                    Obj.remove();
+                else alert("删除失败");
+        }
+    });
+
         calculate_price();
     }
 

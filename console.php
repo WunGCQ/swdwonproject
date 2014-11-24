@@ -220,11 +220,11 @@
                     <div class="form-group">
                         <label for="change-software-thumb" class="visible-lg col-lg-3 control-label">选择预览图</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="csw_image" type="file" class="form-control" name="change-software-thumb"/>
+                            <input id="csw_image" type="file" class="form-control" name="csw_image"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button id="change_software" type="button" class="btn btn-basic">修改商品</button>
+                        <button id="change_software" type="button" class="btn btn-basic" onclick="change_nowsoftware()">修改商品</button>
                     </div>
 
 

@@ -1,6 +1,8 @@
 function changeAmount(Obj,num){
         var InputObj=$(Obj.parentNode.parentNode.parentNode).find(".amount-number");
         var amount=InputObj.val();
+        var id=InputObj.attr('id').substring(3);
+
         console.log(amount);
         amount=parseInt(amount);
         if(num==0){
@@ -26,6 +28,21 @@ function changeAmount(Obj,num){
             InputObj.val(amount);
             calculate_price();
         }
+
+        $.ajax({
+            type: "POST",
+            url: "chg_cart_sw.php",
+            data: {s_id:id,s_amount:amount},
+            dataType: "text",
+            success: function(resText){
+                if(resText != "success"){
+
+                    alert("修改失败");
+
+                }
+            }
+        });
+
     }
     function calculate_price(){
         var shoppinglist=$(".shoppingcart-list>table");

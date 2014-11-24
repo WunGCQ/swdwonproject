@@ -116,7 +116,7 @@
             for($i = 0;$i < $x;$i++)
             {   
                 echo "
-                    <tr id='prod".$info[$i][0]."'' class=\"software\">
+                    <tr id='prod".$info[$i][0]."' class=\"software\">
                         <td>
                             <a href='product.php?s_id=".$info[$i][0]."'><img src='".$info[$i][1]."'/><span> ".$info[$i][2]."</span></a>
                         </td>
