@@ -8,18 +8,15 @@
     <title>思维特:用户登录</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/warning.js" type="text/javascript" charset="utf-8"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/warning.css"/>
     <link rel="stylesheet" type="text/css" href="css/login.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1" style="text-align: center;padding: 150px 0px 50px 0px;border-bottom: 1px solid #ccc;">
-                <h1 style="color: #285e8e;letter-spacing: 4px; font-size: 40px;margin: auto;">思维特</h1>
-            </div>
-        </div>
+    <div id="container">
+
         <div class="row" >
             <div class="col-sm-10 col-sm-offset-1" id="login-wrap" style="border-bottom: 1px solid #ccc;">
                 <form action="logchk.php" method="post">
@@ -41,15 +38,17 @@
                         </div>
                     </div>
                     <div class="row" style="margin-top: 20px;">
-                        <div class="col-sm-2 col-sm-offset-3" >
-                            <a class="btn" href="regist.php" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">用户注册</a>
+
+                        <div class="col-sm-2 col-sm-offset-5" style="text-align: center;">
+                            <a href="">忘记密码？</a>
                         </div>
-                        <div class="col-sm-2">
-                            <button class="btn" type="submit" value="login" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">登录</button>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <button class="btn" type="submit" value="login" style="background-color: #428bca;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">登录</button>
                         </div>
-                        <div class="col-sm-2">
-                            <a class="btn" href="getpwdurl.php" style="background-color: #285e8e;color: #fff;border-radius: 1px;width: 100%;height: 45px;line-height: 30px;font-size: 16px;">找回密码</a>
-                        </div>
+
                     </div>
                 </form>
             </div>
