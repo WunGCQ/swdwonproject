@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
 </head>
 <body>
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1115011626&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1115011626:51" alt="欢迎咨询" title="欢迎咨询"/></a>
 	<?php include("header.php"); ?>
 	<div id="container">
 		<ul id="nav">

@@ -3,7 +3,7 @@
     $s_id = stripslashes(trim($_GET['s_id'])); 
     include("conn/conn.php");
     $sql = mysql_query("select * from software where s_id = '".$s_id."'",$conn);
-    $amt = mysql_query("select COUNT(*) as cnt from s_number where s_id = '".$s_id."'",$conn);
+    $amt = mysql_query("select COUNT(*) as cnt from s_number where sn_issale = '0' and s_id = '".$s_id."'",$conn);
     if(!$sql || !$amt) echo "<script>alert('数据库查询错误');;</script>";
     $info = mysql_fetch_array($sql);
     $arr = mysql_fetch_array($amt);

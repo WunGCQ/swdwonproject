@@ -123,7 +123,7 @@ function prodjson(u_id,aid,id_list,amt_list)
 		jsonstr += "{ \"s_id\": ";
 		jsonstr += "\""+id_list[i].getAttribute("id").substring(4)+"\"";
 		jsonstr += ", \"s_amount\": ";
-		jsonstr += "\""+amt_list[i].getAttribute("value")+"\"";
+		jsonstr += "\""+$(amt_list[i]).val()+"\"";
 		jsonstr += ", \"s_price\": ";
 		jsonstr += "\""+id_list[i].cells[1].innerText+"\"";
 		jsonstr += ", \"s_name\": ";

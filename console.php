@@ -185,7 +185,7 @@
                     <div class="form-group">
                         <label for="change-software-price" class="visible-lg col-lg-3 control-label">软件发行商</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="csw_manu" type="number" class="form-control" name="change-software-price" placeholder="请填写软件发行商" />
+                            <input id="csw_manu" type="text" class="form-control" name="change-software-price" placeholder="请填写软件发行商" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -208,7 +208,7 @@
                     <div class="form-group">
                         <label for="change-software-intro" class="visible-lg col-lg-3 control-label">商品介绍</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <textarea id="csw_introd"type="text" class="form-control" name="change-software-intro" placeholder="请填写商品介绍"></textarea>
+                            <textarea id="csw_introd" type="text" class="form-control" name="change-software-intro" placeholder="请填写商品介绍"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -267,7 +267,7 @@
                             <td>".$info["s_introd"]."</td>
                             <td>".$info["s_requirement"]."</td>
                             <td>
-                                <span class=\"change-software\" onclick=jumpto_change('".$info["s_id"]."')>修改</span>
+                                <span class=\"change-software\" onclick=jumpto_change(this)>修改</span>
                                 <span class=\"delete-software\" onclick=delete_nowsoftware('".$info["s_id"]."')>删除</span>
                             </td>
                         </tr>";
