@@ -239,15 +239,15 @@
             <table style="width: 100%">
                 <thead>
                     <tr>
-                        <th style="width: 5%">id</th>
+                        <th type="hidden" style="width: 0%">id</th>
                         <th style="width: 10%">名称</th>
                         <th style="width: 10%">缩略图</th>
-                        <th style="width: 10%">介绍</th>
-                        <th style="width: 10%">类别</th>
                         <th style="width: 10%">发行商</th>
-                        <th style="width: 10%">配置</th>
-                        <th style="width: 10%">价格</th>
-                        <th style="width: 10%">操作</th>
+                        <th style="width: 5%">价格</th>
+                        <th style="width: 5%">类别</th>
+                        <th style="width: 25%">介绍</th>
+                        <th style="width: 20%">配置</th>
+                        <th style="width: 15%">操作</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -258,12 +258,12 @@
                     {
                         echo "   
                         <tr id='software".$info["s_id"]."'>
-                            <td>".$info["s_id"]."</td>
+                            <td type=\"hidden\">".$info["s_id"]."</td>
                             <td>".$info["s_name"]."</td>
                             <td><img src='".$info["s_imagepath"]."' style=\"width:50px;height:50px;\" /></td>
-                            <td>".$info["s_cate"]."</td>
-                            <td>".$info["s_price"]."</td>
                             <td>".$info["s_manufac"]."</td>
+                            <td>".$info["s_price"]."</td>
+                            <td>".$info["s_cate"]."</td>
                             <td>".$info["s_introd"]."</td>
                             <td>".$info["s_requirement"]."</td>
                             <td>
@@ -272,7 +272,7 @@
                             </td>
                         </tr>";
                     }
-                ?>change_nowsoftware
+                ?>
                 </tbody>
             </table>
 

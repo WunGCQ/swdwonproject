@@ -13,10 +13,13 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/warning.css"/>
     <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
 </head>
 <body>
-    <div id="container">
+    <?php include("header.php"); ?>
 
+    <div id="container">
         <div class="row" >
             <div class="col-sm-10 col-sm-offset-1" id="login-wrap" style="border-bottom: 1px solid #ccc;">
                 <form action="logchk.php" method="post">
@@ -55,6 +58,8 @@
         </div>
     </div>
 
+    <?php include("footer.php"); ?>
 
 </body>
+
 </html>
