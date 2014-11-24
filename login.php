@@ -2,8 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="名称" content="特准客">
-    <meta name="特准客 简介" content="简介">
+    <meta name="名称" content="思维特">
+    <meta name="思维特 登录" content="登录">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思维特:用户登录</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
