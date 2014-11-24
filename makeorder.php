@@ -13,7 +13,7 @@
 	{
 		$query = mysql_query("select COUNT(*) as cnt from s_number where sn_issale = '0' and s_id = '".$goods[$i]["s_id"]."'",$conn);
 		$res = mysql_fetch_array($query);
-		if(!$res){ echo "error"; exit; }
+		if(!$res){ echo "database error"; exit; }
 
 		if($goods[$i]["s_amount"] > $res["cnt"])
 		{
@@ -22,7 +22,6 @@
 		}
 		$total += $goods[$i]["s_price"] * $goods[$i]["s_amount"];
 	}
-
 	//生成订单，将订单写入数据库
 	$o_time = time();
 	$a_id = $arr["addr_id"];
@@ -48,11 +47,11 @@
 	{
 		$slist = array();
 
-		$s_id = $arr["products"][0]["s_id"];
-		$g_amount = $arr["products"][0]["s_amount"];
+		$s_id = $goods[0]["s_id"];
+		$g_amount = $goods[0]["s_amount"];
 		$sql = "insert into goods(s_id,g_amount,o_id) values('".$s_id."','".$g_amount."','".$o_id."')";
 		$query = mysql_query($sql,$conn);
-		if(!$query){ echo "error"; exit; }
+		if(!$query){ echo "database error"; exit; }
 
 		//取出序列号码，更新数据库
 		$j = 0;
@@ -60,17 +59,24 @@
 		while($info = mysql_fetch_array($query))
 		{
 			$slist[$j] = $info["sn_number"];
-			$res = mysql_query("update s_number set sn_issale = '1' where sn_id = '".$info["sn_id"]."'");
-			if(!$res){ echo "database error"; exit; }
+			/*$res = mysql_query("update s_number set sn_issale = '1' where sn_id = '".$info["sn_id"]."'");
+			if(!$res){ echo "database error"; exit; }*/
+			$j = $j + 1;
 		}
+		$s_number[$i] = $slist;
 	}
 
 	//下单用户信息
 	$username = "未注册用户";
-	if($arr["user_id"])
+	$user_email = "";
+	$user_status = "";
+	if($arr["user_id"] != -1)
 	{
-		$ans = mysql_query("select u_name from user where u_id = '".$arr["user_id"]."'");
+		$an = mysql_query("select * from user where u_id = '".$arr["user_id"]."'");
+		$ans = mysql_fetch_array($an);
 		$username = $ans["u_name"];
+		$user_email = $ans["u_email"];
+		$user_status = $ans["u_status"];
 	}
 
 	//订单地址
@@ -78,15 +84,67 @@
 	$address = mysql_fetch_array($query_addr);
 	$a_name = $address["a_name"];
 	$a_address = $address["a_address"];
-	$a_telephone = $address["a_te"];
+	$a_telephone = $address["a_telephone"];
 	//商品名称  goods[$i]["s_name"]
 	//商品数量  goods[$i]["s_amount"]
 	//$len goods的大小
 
 	//$o_id  订单号
 	//$o_time 时间
+	$user_content = array();
+	$admin_content = array();
+
+	$user_content[0] = $user_name;
+	$user_content[1] = $o_time;
+	$user_content[2] = $o_id;
+	$user_content[3] = $a_name;
+	$user_content[4] = $a_telephone;
+	$user_content[5] = $a_address;
+	$user_content[6] = $goods;
+	$user_content[7] = $total;
+
+	$admin_content[0] = "网站管理员";
+	$admin_content[1] = $o_time;
+	$admin_content[2] = $o_id;
+	$admin_content[3] = $a_name;
+	$admin_content[4] = $a_telephone;
+	$admin_content[5] = $a_address;
+	$admin_content[6] = $goods;
+	$admin_content[7] = $total;
+	$admin_content[8] = $s_number;
+
+	//用户订单通知
+	include("prodHtmlEmail.php");
+	include("readconfig.php");
+
+	if($arr["user_id"] != -1 && $user_status == 1)
+	{
+		$to = $user_email;
+		$subject = "订单通知";
+		$body = send_to_user($user_content);
+
+		if(!sendEmails($mail,$to,$subject,$body,$semail,$semail_password))
+		{
+			echo "mail error";
+			exit;
+		}	
+	}
+	//echo "user";
+
+	//管理员订单通知
+	$to = $remail;
+	$subject = "新订单通知";
+	$body = send_to_admin($admin_content);
+
+	if(!sendEmails($mail,$to,$subject,$body,$semail,$semail_password))
+	{
+		echo "mail error";
+		exit;
+	}	
+	echo "success";
 
 
+/*
 	$to = "buaa1121wxp@163.com";
 	$subject = "思维特软件商店-新订单来了";
 	$body = "新订单,哈哈";
@@ -97,5 +155,5 @@
 	}	
 
 	//给用户发邮件
-	echo "success";
+	echo "success";*/
 ?>

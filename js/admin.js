@@ -81,12 +81,22 @@ function delete_nowsoftware(s_id)
     });
 }
 
-function jumpto_change(s_id)
+function jumpto_change(btnObj)
 {
-	/*alert(s_id);
-	var div = document.getElementById("software"+s_id);
-	document.getElementById("csw_name").value = div.childNodes[2].innerText;
-	console.log(div.childNodes[2].innerText);*/
+	$(".nav-bar").attr("class","nav-bar");
+    $(".tab-block").attr("class","tab-block");
+    $(document.getElementsByClassName("nav-bar")[2]).attr("class","nav-bar nav-active");
+    $(document.getElementsByClassName("tab-block")[2]).attr("class","tab-block active-tab");
+
+
+    var trObj=$(btnObj.parentNode.parentNode);
+    console.log(trObj.children().first());
+    var td=trObj.children().first();
+    var id=td.text();
+    $("#csw_id").val(td.text());
+    td=td.next();
+    $("#csw_name").val(td.text());
+    td=td.next();
 }
 
 function delete_user(u_id)

@@ -5,4 +5,7 @@
     $semail = fgets($file);
     $semail_password = fgets($file);
     fclose($file);
+
+    require("./phpmailer/class.phpmailer.php");//调用
+	$mail = new PHPMailer();
 ?>
