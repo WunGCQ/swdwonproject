@@ -1,0 +1,1 @@
+update user set u_token='fe9a52b2067ce588fa64911cd9727ace' , u_exptime = '1416900994' where u_id = '3'

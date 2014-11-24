@@ -9,5 +9,5 @@
 
 	$query = mysql_query("insert into address(u_id,a_name,a_address,a_telephone) values('".$u_id."','".$a_name."','".$a_address."','".$a_telephone."')",$conn);
 	if(!$query) echo "error";
-	else echo "success";
+	else echo mysql_insert_id($conn);
 ?>

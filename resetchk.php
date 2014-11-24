@@ -36,17 +36,18 @@
 			return $msg;
 		}
 
+		include("readconfig");
 		$to = $u_email;
 		$subject = "思维特官方商店——重置密码链接";
 		$token = md5($info["u_id"].$info["u_password"].$info["u_name"]);
 		$time = time('Y-m-d H:i');
 		$exptime = time()+60*60*24;
-		$url = "localhost/swdwonproject/reset.php?username=".$info["u_name"]."&token=".$token;//构造URL 
+		$url = $domain."reset.php?username=".$info["u_name"]."&token=".$token;//构造URL 
 		$body = "亲爱的".$info["u_name"]."：<br/>您在".time()."提交了找回密码请求。请点击下面的链接重置密码 
 （按钮24小时内有效）。<br/><a href='".$url."'target='_blank'>".$url."</a>"; 
 		
 		include("function.php");
-		if(sendEmails($to,$subject,$body))
+		if(sendEmails($to,$subject,$body,$semail,$semail_password))
 		{	
 			$msg = "邮件发送成功";
 			$ans = mysql_query("update user set u_exptime = '".$exptime."'",$conn);

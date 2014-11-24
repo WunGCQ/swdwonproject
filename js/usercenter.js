@@ -184,7 +184,7 @@ function addAddr(u_id)
                 return;
             }
 
-            var innerHTML = "<div id=\""+"haha"+"\" class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div><div><div class=\"delete-address\">删除</div><div class=\"change-address\">修改</div></div></div>";
+            var innerHTML = "<div id="+resText+"\" class=\"address\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div><div><div class=\"delete-address\">删除</div><div class=\"change-address\">修改</div></div></div>";
             $(document.getElementById('add_address').parentNode ).before(innerHTML);
         }
     });
@@ -236,7 +236,22 @@ function changeAddr(obj)
     });
 }
 
-
-
-
-
+function verifyEmail(u_id,u_name,u_email,u_password)
+{
+    $.ajax({
+        type: "POST",
+        url: "verifyemail.php",
+        data: {u_id:u_id,u_email:u_email,u_name:u_name,u_password:u_password},
+        dataType: "text",
+        success: function(resText){
+            if(resText == "success")
+            {
+                alert("激活成功，请及时查收邮件");
+            }
+            else alert(resText);
+        },
+        error: function(resText){
+            alert("resText");
+        } 
+    });
+}

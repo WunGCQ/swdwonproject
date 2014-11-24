@@ -1,8 +1,13 @@
 <?php
 	
-	$s_id = trim($_POST["softw_id"]);
+	$s_id = trim($_POST["s_id"]);
 	$amount = trim($_POST["amount"]);
-	echo $s_id."   ".$amount;
+	
+	if($s_id == "" || $amount == "")
+	{
+		echo "error";
+		exit;
+	}
 
 	session_start();
 	if($_SESSION["cart"]) $cart = $_SESSION["cart"];

@@ -50,6 +50,15 @@
     font-size: 18px;
     padding: 15px 0px;
 }
+.shoppingcart-list a{
+    text-decoration: none;
+}
+.shoppingcart-list a,.shoppingcart-list a:link,.shoppingcart-list a:visited{
+    color: #333;
+}
+.shoppingcart-list a:hover,.shoppingcart-list a:active{
+    color: #285e8e;
+}
 .shoppingcart-list tbody>tr>td:nth-child(2),.shoppingcart-list tbody>tr>td:nth-child(3),.shoppingcart-list tbody>tr>td:nth-child(4){
     color: #285e8e;
     font-size: 20px;
@@ -323,4 +332,14 @@ form .btn[value="submit"],.btn[value="add-address"],.btn[value="submit"],.btn[va
 }
 form .btn[value="submit"]:hover,.btn[value="add-address"]:hover,.btn[value="submit"]:hover{
     background-color: #264d7b;
+}
+
+#shoppingcart-null{
+    width: 100%;
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    font-size: 20px;
+    margin-top: 100px;
+    background-color: #e4eaff;
 }

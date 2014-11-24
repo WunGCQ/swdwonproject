@@ -121,6 +121,9 @@ function changeTabByLeftBar(obj){
     }
 }
 
+<<<<<<< HEAD
 function getSelectedTrObj(Obj){
     return $(Obj.parentNode.parentNode);
 }
+=======
+>>>>>>> 5f6d8345140e210b92a671acfcd48891108d617d

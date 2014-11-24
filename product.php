@@ -54,9 +54,10 @@
             height: 580px;
             padding-top: 20px;
             width: 1024px;
+            display: inline-block !important;
         }
         #brief-info-images,#brief-info-text{
-            display: inline-block;
+            display: inline-block !important;
             vertical-align: top;
             height: 500px;
         }
@@ -217,10 +218,10 @@
 <?php include("header.php"); ?>
 <div id="brief-info">
     <div id="brief-info-content">
-        <div id="brief-info-images">
+        <div id="brief-info-images" style="display:inline-block;">
             <img src="img/saber.jpg" alt=""/>
         </div>
-        <div id="brief-info-text">
+        <div id="brief-info-text" style="display:inline-block;">
             <div id="product-name">
                 <?php echo $info["s_name"]; ?>
             </div>

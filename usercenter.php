@@ -37,7 +37,6 @@
                 <!--<div class="nav-bar" onclick="change_tab(this)">信息管理</div>-->
                 <div class="nav-bar" onclick="change_tab(this)">密码修改</div>
                 <div class="nav-bar" onclick="change_tab(this)">收货地址</div>
-                <div class="nav-bar" onclick="change_tab(this)">购物车</div>
                 <div class="long"></div>
             </div>
         </div>
@@ -65,9 +64,10 @@
                             if($info["u_status"] == 0)
                                 echo "
                                     <tr style=\"text-align: center;padding: 20px;\">
-                                        <td colspan=\"3\"> <a href=\"\" id=\"a-check-mail\">您的邮箱还未验证，请及时验证！</a></td>
-                                    </tr>
-                                ";
+                                        <td colspan=\"3\"> <a href=\"#\" id=\"a-check-mail\" onclick=\"verifyEmail('".$info["u_id"]."','".$info["u_name"]."','".$info["u_email"]."','".$info["u_password"]."')\"><font color='red'>您的邮箱还未验证，请及时验证！否则无法接受订单信息</font></a></td>
+                                    </tr>";
+                                /*echo "<script language='javascript'>alert('".$haha."');</script>";*/
+                                 //echo "<script language='javascript'>alert('".$haha."');</script>";
                         ?>
                     </tbody>
 
@@ -127,68 +127,6 @@
                 </div>
 
             </div>
-            <div id="shoppingcart" class="tab" style="text-align: center;">
-                <div class="shoppingcart-list">
-                    <table style="margin: 10px auto;">
-                        <tr style="background-color: #fff;text-align: center;height: 40px;padding: 0px;">
-                            <th width="300px">商品名称</th>
-                            <th width="120px">价格</th>
-                            <th width="120px">数量</th>
-                            <th width="120px">总价</th>
-                            <th width="120px">操作</th>
-                        </tr>
-                        <tbody>
-                            <?php
-
-                                foreach($cart as $x=>$x_value)
-                                {
-
-                                }
-
-                            ?>
-                            <tr class="software">
-                                <td>商品名称</td>
-                                <td>20</td>
-                                <td>
-                                    <div class="select-amount-wrap">
-                                        <div class="amount-minus">-</div>
-                                        <input class="amount-number" type="text" value="1"/>
-                                        <div class="amount-add">+</div>
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td><span class="delete-software">删除</span></td>
-                            </tr>
-                            <tr class="software">
-                                <td>
-                                    <img src="img/saber.jpg" alt=""/><span> Saber骑着摩托车奔驰在冬木市,吾王赛高！</span>
-                                </td>
-                                <td>99.99</td>
-                                <td>
-                                    <div class="select-amount-wrap">
-                                        <div class="amount-minus">-</div>
-                                        <input class="amount-number" type="text" value="1"/>
-                                        <div class="amount-add">+</div>
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td><span class="delete-software">删除</span></td>
-                            </tr>
-
-
-                            <tr>
-                                <td id="price-whole" colspan="5">3000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-                <div>
-                    <button class="btn" type="button" value="submit" onclick="" style="margin-right:0px;width:150px;font-size: 20px;">结算</button>
-                </div>
-
-            </div>
-        </div>
     </div>
     <div class="model-window" id="change-address">
         <div class="window-main" id="address-window">
