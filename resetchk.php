@@ -36,7 +36,7 @@
 			return $msg;
 		}
 
-		include("readconfig");
+		include("readconfig.php");
 		$to = $u_email;
 		$subject = "思维特官方商店——重置密码链接";
 		$token = md5($info["u_id"].$info["u_password"].$info["u_name"]);
@@ -47,7 +47,7 @@
 （按钮24小时内有效）。<br/><a href='".$url."'target='_blank'>".$url."</a>"; 
 		
 		include("function.php");
-		if(sendEmails($to,$subject,$body,$semail,$semail_password))
+		if(sendEmails($mail,$to,$subject,$body,$semail,$semail_password))
 		{	
 			$msg = "邮件发送成功";
 			$ans = mysql_query("update user set u_exptime = '".$exptime."'",$conn);

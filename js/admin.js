@@ -296,3 +296,15 @@ function changeconfig()
         }
     });
 }
+
+function logout()
+{
+    $.ajax({
+        type: "GET",
+        url: "logout.php",
+        dataType: "text",
+        success: function(resText){
+            window.location = "index.php";
+        }
+    });
+}

@@ -16,7 +16,8 @@
                 <td><a href="Delivery.php">配送方式</a></td>
                 <td><a href="aftersale.php">售后服务</a></td>
                 <td><a href="paymentHelp.php">付款帮助</a></td>
-                <td> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1115011626&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1115011626:51" alt="欢迎咨询" title="欢迎咨询"/></a></td>
+                <td> <a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=0c872b3285efe23495d6a63dc6989c3fb3c013f41b851e0c"><img border="0" src="http://wpa.qq.com/imgd?IDKEY=0c872b3285efe23495d6a63dc6989c3fb3c013f41b851e0c&pic=51" alt="点击这里在线咨询" title="点击这里在线咨询"></a>
+</td>
             </tr>
             <tr>
                 <td></td>

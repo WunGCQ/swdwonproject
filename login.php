@@ -46,7 +46,7 @@
                     <div class="row" style="margin-top: 20px;">
 
                         <div class="col-sm-2 col-sm-offset-5" style="text-align: center;">
-                            <a href="">忘记密码？</a>
+                            <a href="getpwdurl.php">忘记密码？</a>
                         </div>
                     </div>
                     <div class="row" style="margin-top: 20px;">

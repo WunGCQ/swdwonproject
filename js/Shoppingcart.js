@@ -88,9 +88,10 @@ function changeAmount(Obj,num){
                     alert("添加失败");
                     return;
                 }
-                var innerHTML="<div id="+resText+" class=\"address\" onclick=\"setAddress(this)\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div>"
+                var innerHTML="<div id='addr"+resText+"' class=\"address\" onclick=\"setAddress(this)\"><div><div class=\"address-name\">"+a_name+"</div><div class=\"address-phone\">"+a_telephone+"</div><div class=\"address-address\">"+a_address+"</div></div>"
                 $(document.getElementById('add-address-btn')).before(innerHTML);
-                setAddress($(document.getElementById(resText)));
+                setAddress($(document.getElementById("addr"+resText)));
+                $("#add-address").hide();
             }
         });
     }

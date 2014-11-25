@@ -23,7 +23,7 @@
 '_blank'>".$domain."active.php?verify=".$u_token."</a><br/> 
     如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。";
 
-    if(sendEmails($to,$subject,$body,$semail,$semail_password))
+    if(sendEmails($mail,$to,$subject,$body,$semail,$semail_password))
     	echo "success";
     else echo "发送邮件错误";
 ?>

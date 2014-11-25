@@ -78,12 +78,35 @@
 			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
 			date_default_timezone_set('Etc/GMT-8');
   			$photo=date("Ymdhis").rand(100,999).$ext;
+  			return $_FILES[$filepath]['tmp_name'];
   			$ans = move_uploaded_file( $_FILES[$filepath]['tmp_name'] , 'img/'.$photo );
   			if($ans) return 'img/'.$photo;
   			else return -1;
 		}
 		return -2;
 	}
+
+	/*function UploadImage($filepath)
+	{
+	    $type = $_FILES[$filepath]['type'];
+
+		if($type=='image/jpg'|| $type=='image/jpeg'||$type=='image/pjpeg')
+		{
+			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
+			date_default_timezone_set('Etc/GMT-8');
+  			$photo=date("Ymdhis").rand(100,999).$ext;
+
+  			$storage = new SaeStorage();
+  			$domain = 'img';
+  			$srcFileName = $_FILE[$filepath]['tmp_name'];
+  			$attr = array('encoding'=>'gzip');
+		 	$result = $storage->upload($domain,$photo,$srcFileName,-1,$attr, true);
+
+  			if($result) return $stor->getUrl($domain,$photo);
+  			else return -1;
+		}
+		return -2; 
+	}*/
 
 	function DeleteImage($imagepath)
 	{

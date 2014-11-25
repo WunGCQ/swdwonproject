@@ -26,14 +26,14 @@
 		/*echo $u_name.",".$u_password.",".$u_email.",".$u_telephone;
 		return;*/
 
-		$sql = "insert into user(u_name,u_password,u_email,u_telephone,u_isadmin,u_token,u_exptime,u_status) values('".$u_name."','".md5($u_password)."','".$u_email."','".$u_telephone."',0,'".$u_token."','".$u_exptime."',0)";
+		$sql = "insert into user(u_name,u_password,u_email,u_telephone,u_isadmin,u_token,u_exptime,u_status) values('".$u_name."','".$u_password."','".$u_email."','".$u_telephone."',0,'".$u_token."','".$u_exptime."',0)";
 		$insert =mysql_query($sql,$conn);
 		if($insert == 0){
 			echo "数据库异常";
 			return;
 		}
 
-		include("readconfig");
+		include("readconfig.php");
 		$to = $u_email;
 		$subject = "用户账号激活邮件";
 		$body = "亲爱的".$u_name."：<br/>感谢您在我站注册了新帐号。<br/>请点击链接激活您的帐号。<br/> 
@@ -41,7 +41,7 @@
 '_blank'>".$domain."active.php?verify=".$u_token."</a><br/> 
     如果以上链接无法点击，请将它复制到你的浏览器地址栏中进入访问，该链接24小时内有效。";
 
-    	sendEmails($to,$subject,$body,$semail,$semail_password);
+    	sendEmails($mail,$to,$subject,$body,$semail,$semail_password);
 
     	echo "success";
 	}

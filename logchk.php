@@ -21,7 +21,11 @@
 		{
 			$_SESSION["u_id"] = $info['u_id'];
     	    $_SESSION["u_name"] = $info['u_name'];
-    	    echo "<script language='javascript'>window.location='index.php';</script>";
+
+    	    if($info["u_isadmin"] == 0)
+    	        echo "<script language='javascript'>window.location='index.php';</script>";
+    	    else
+    	        echo "<script language='javascript'>window.location='console.php';</script>";
         }
 	}
 	checkInput();

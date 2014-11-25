@@ -18,7 +18,7 @@
             	//重置密码... 
             	$msg = '请重新设置密码，显示重置密码表单，<br/>这里只是演示，略过。';
                 session_start();
-                $_SESSION["u_name"]=$u_name; 
+                $_SESSION["u_name"]=$u_name;
             	header("Location: resetpwd.php");
             	exit;
         	} 
