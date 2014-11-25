@@ -30,33 +30,44 @@
 	</div>
 	<div id="container">
 		<div id="nav">
-			<div class="nav-div" onmouseover="showListMenu('appstore-menu')" onmouseout="hideListMenu('appstore-menu')">
-                Apple Store
-                <ul class="list-menu" id="appstore-menu"  >
+			<div class="nav-div active" onclick="setActiveBlock('cw-1',this);">
+                首页
+            </div>
+			<div class="nav-div"  onmouseover="showListMenu('windows-menu')" onmouseout="hideListMenu('windows-menu')" onclick="setActiveBlock('cw-2',this);">
+                Windows平台
+                <ul class="list-menu" id="windows-menu"  >
                     <li><a href="">选项一</a></li>
                     <li><a href="">选项afa</a></li>
                     <li><a href="">选fow3e</a></li>
                 </ul>
             </div>
-			<div class="nav-div"  onmouseover="showListMenu('adobe-menu')" onmouseout="hideListMenu('adobe-menu')">
-                Adobe商品
-                <ul class="list-menu" id="adobe-menu"  >
+            <div class="nav-div"  onmouseover="showListMenu('Mac-menu')" onmouseout="hideListMenu('Mac-menu')" onclick="setActiveBlock('cw-3',this);">
+                Mac平台
+                <ul class="list-menu" id="Mac-menu"  >
                     <li><a href="">选项一</a></li>
                     <li><a href="">选项afa</a></li>
                     <li><a href="">选fow3e</a></li>
                 </ul>
             </div>
-            <div class="nav-div"  onmouseover="showListMenu('x-menu')" onmouseout="hideListMenu('x-menu')">
-                使用说明
-                <ul class="list-menu" id="x-menu"  >
+            <div class="nav-div"   onmouseover="showListMenu('IOS-menu')" onmouseout="hideListMenu('IOS-menu')" onclick="setActiveBlock('cw-4',this);">
+                iOS平台
+                <ul class="list-menu" id="IOS-menu">
                     <li><a href="">选项一</a></li>
                     <li><a href="">选项afa</a></li>
                     <li><a href="">选fow3e</a></li>
                 </ul>
             </div>
-            <div class="nav-div"   onmouseover="showListMenu('us-menu')" onmouseout="hideListMenu('us-menu')" >
-                关于我们
-                <ul class="list-menu" id="us-menu">
+            <div class="nav-div"   onmouseover="showListMenu('e-menu')" onmouseout="hideListMenu('e-menu')" onclick="setActiveBlock('cw-5',this);">
+                数码周边
+                <ul class="list-menu" id="e-menu">
+                    <li><a href="">选项一</a></li>
+                    <li><a href="">选项afa</a></li>
+                    <li><a href="">选fow3e</a></li>
+                </ul>
+            </div>
+            <div class="nav-div"   onmouseover="showListMenu('books-menu')" onmouseout="hideListMenu('books-menu')" onclick="setActiveBlock('cw-6',this);">
+                图书文献
+                <ul class="list-menu" id="books-menu">
                     <li><a href="">选项一</a></li>
                     <li><a href="">选项afa</a></li>
                     <li><a href="">选fow3e</a></li>
@@ -65,7 +76,16 @@
         </div>
 
 
-        <div id="commodities-wrap">
+        <div class="commodities-wrap" id="cw-1">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1111111</span>
+                </div>
+            </div>
             <div class="commodity">
                 <div class="commodity-pic">
                     <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
@@ -73,6 +93,417 @@
                 <div class="commodity-info">
                     <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
                     <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/saber.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="commodities-wrap" id="cw-2">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">222222</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/saber.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="commodities-wrap" id="cw-3">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">33333</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/saber.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="commodities-wrap" id="cw-4">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">4444444</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/saber.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="commodities-wrap" id="cw-5">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">55555</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/saber.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">1234</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="commodities-wrap" id="cw-6">
+            <div class="commodity">
+                <div class="commodity-pic">
+                    <img src="img/ps.jpg" alt="Adobe PhotoShop CC 中文版"/>
+                </div>
+                <div class="commodity-info">
+                    <span class="commodity-title">Adobe PhotoShop CC 中文版</span>
+                    <span class="commodity-price">666666</span>
                 </div>
             </div>
             <div class="commodity">
@@ -161,7 +592,7 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr style="border-bottom: 1px sodivd #ccc;">
+            <tr >
                 <td></td>
                 <td> <strong>帮助说明</strong> </td>
                 <td><a href="">配送方式</a></td>
@@ -272,5 +703,12 @@
         $(ListMenu).hide();
 //        ListMenu.style.display="none";
     }
+    function setActiveBlock(name,Obj){
+        $('.nav-div').attr("class","nav-div");
+        $(Obj).attr("class","nav-div active");
+        $('.commodities-wrap').hide();
+        $('#'+name).show();
+    }
+    $('#cw-1').show();
 </script>
 </html>

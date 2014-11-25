@@ -22,8 +22,9 @@ body{
     border: 1px solid #ddd;
     width: 835px;
     background-color: rgba(0,0,0,0.8);
+    background-color: rgba(35, 88, 168, 1);
     /*background-color: rgba(66,139,202,0.9);*/
-    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    /*box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);*/
 
 }
 #nav div{
@@ -32,11 +33,14 @@ body{
     color: #fff;
     cursor: pointer;
 }
+#nav .active{
+    background-color:  rgba(0,0,0,0.2);
+}
 #nav .nav-div{
-	margin: 0px 10px;
+	margin: 0px;
 	display: inline-block;
-    padding: 15px 20px;
-    width: 80px;
+    padding: 15px 10px;
+    width: 100px;
 }
 
 .list-menu{
@@ -49,6 +53,7 @@ body{
 
     /*background-color: rgba(66,139,202,0.9);*/
     background-color: rgba(0,0,0,0.8);
+    background-color: rgba(35,88,168,0.9);
     -webkit-padding-start:0px;
 }
 .list-menu li{
@@ -81,14 +86,15 @@ body{
 
 
 
-#commodities-wrap{
+.commodities-wrap{
+    display: none;
     width: 830px;
     margin: 10px auto;
     padding: 0px;
     padding-left: 3px;
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.2);
 }
-#commodities-wrap>div{
+.commodities-wrap>div{
     display: inline-block;
     vertical-align: top;
     height: 277px;
@@ -97,7 +103,7 @@ body{
     border: 1px solid #eee;
     cursor:default;
 }
-#commodities-wrap>div:hover{
+.commodities-wrap>div:hover{
     background-color: #ddd;
 }
 .commodity{
@@ -112,7 +118,7 @@ body{
     line-height: 180px;
     border-bottom: 1px solid #eee;
 }
-#commodities-wrap{
+.commodities-wrap{
     text-align: left;
 }
 .commodity-pic img{
