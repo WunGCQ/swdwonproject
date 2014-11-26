@@ -6,10 +6,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="名称" content="思维客">
-    <meta name="思维客 简介" content="简介">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <title>思维特：注册</title>
+    <title>思唯特：注册</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/regist.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/warning.js" type="text/javascript" charset="utf-8"></script>
@@ -27,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div  id="header" class="col-xs-10 col-xs-offset-1">
-            <a href="index.php"><h1>思维特</h1></a>
+            <a href="index.php"><h1>思唯特</h1></a>
             <h2>用户注册</h2>
             </div>
         </div>
@@ -102,12 +100,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-xs-offset-4 col-xs-10">
-                                <button type="button" class="btn btn-theme" onclick="checkinfo();">同意协议并注册</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-offset-4 col-xs-10">
-                                <a href="legalNotices" target="_blank">《思维客 法律声明》</a>
+                                <button type="button" class="btn btn-theme" onclick="checkinfo();">注册</button>
                             </div>
                         </div>
                     </form>

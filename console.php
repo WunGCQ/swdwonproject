@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>思维特：控制台</title>
+    <title>思唯特：控制台</title>
     <!--<script src="foundation/js/foundation.min.js"></script>-->
     <script src="js/page_control.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -19,8 +18,6 @@
     <link rel="stylesheet" href="css/ad-management.css" />
     <!--临时样式表 头-->
     <style>
-
-
     </style>
     <!--临时样式表 尾-->
 
@@ -45,19 +42,40 @@
         <div id="top-bar-units">
 
             <div class="exit-block top-bar-hover-elements">
-                <span class="fa fa-mail-forward"></span><div class="hidden-xs" onclick="logout()">注销</div>
+                <span class="fa fa-mail-forward"></span><div class="hidden-xs">注销</div>
+            </div>
+
+
+            <div class="hr-h">
             </div>
             <!--显示用户名-->
             <div class="user-info-block top-bar-hover-elements">
-                <div id="username" class="hidden-xs">
-                    <?php
-                        include("conn/conn.php");
-                        $query = mysql_query("select u_name from user where u_id = '".$_SESSION["u_id"]."'",$conn); 
-                        $info = mysql_fetch_array($query);
-                        echo $info["u_name"];
-                    ?>
-                </div>
-            </div>    
+                <div id="username" class="hidden-xs"></div>
+                <ul id="list-menu">
+                    <li>
+                        <span class="fa fa-lastfm"></span>选项一
+                        <!--<div class="hr-v"></div>-->
+                    </li>
+
+                    <li>
+                        <span class="fa fa-magic"></span>选项②
+                        <!--<div class="hr-v"></div>-->
+                    </li>
+
+                    <li>
+                        <span class="fa fa-navicon"></span>选项叁
+                        <!--<div class="hr-v"></div>-->
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hr-h">
+            </div>
+
+            <div class="aboutus-block top-bar-hover-elements hidden-xs">
+                关于我们
+            </div>
+
         </div>
 
 
@@ -89,34 +107,34 @@
                 <div class="row">
                     <span style="margin-bottom: 10px;display: block;">请填写商品信息</span>
                 </div>
-                <form name="form" action="add_software.php" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
+                <form name="form" action="" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="create-software-name" class="visible-lg col-lg-3 control-label">商品名称</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="nsw_name" type="text" class="form-control" name="nsw_name" placeholder="请填写商品名称" />
+                            <input id="nsw_name" type="text" class="form-control" name="create-software-name" placeholder="请填写商品名称" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="create-software-name" class="visible-lg col-lg-3 control-label">软件发行商</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="nsw_manu" type="text" class="form-control" name="nsw_manu" placeholder="请填写软件发行商" />
+                            <input id="nsw_manu" type="text" class="form-control" name="create-software-name" placeholder="请填写软件发行商" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="create-software-price" class="visible-lg col-lg-3 control-label">商品价格</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="nsw_price" type="number" class="form-control" name="nsw_price" placeholder="请填写商品价格" />
+                            <input id="nsw_price" type="number" class="form-control" name="create-software-price" placeholder="请填写商品价格" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="create-software-content" class="visible-lg col-lg-3 control-label">商品类别</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 " >
-                            <select id="nsw_cate" class="form-control" name="nsw_cate" >
+                            <select id="nsw_cate" class="form-control" name="create-software-type" >
                                 <option value ="1">Windows平台</option>
-                                <option value ="2">Mac平台</option>
+                                <option value ="2">MAC平台</option>
                                 <option value ="3">IOS平台</option>
                                 <option value ="4">数码周边</option>
-                                <option value ="5">图书文献</option>          
+                                <option value ="5">图书文献</option>
                             </select>
                         </div>
                     </div>
@@ -139,7 +157,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button id="add_software" type="submit" class="btn btn-basic">添加商品</button>
+                        <button id="add_software" type="button" class="btn btn-basic">添加商品</button>
                     </div>
 
 
@@ -179,10 +197,10 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 " >
                             <select id="csw_cate" class="form-control" name="change-software-content">
                                 <option value ="1">Windows平台</option>
-                                <option value ="2">Mac平台</option>
+                                <option value ="2">MAC平台</option>
                                 <option value ="3">IOS平台</option>
                                 <option value ="4">数码周边</option>
-                                <option value ="5">图书文献</option>     
+                                <option value ="5">图书文献</option>
                             </select>
                         </div>
                     </div>
@@ -201,11 +219,11 @@
                     <div class="form-group">
                         <label for="change-software-thumb" class="visible-lg col-lg-3 control-label">选择预览图</label>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
-                            <input id="csw_image" type="file" class="form-control" name="csw_image"/>
+                            <input id="csw_image" type="file" class="form-control" name="change-software-thumb"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button id="change_software" type="button" class="btn btn-basic" onclick="change_nowsoftware()">修改商品</button>
+                        <button id="change_software" type="button" class="btn btn-basic">修改商品</button>
                     </div>
 
 
@@ -220,14 +238,14 @@
             <table style="width: 100%">
                 <thead>
                     <tr>
-                        <th type="hidden" style="width: 0%">id</th>
+                        <th style="width: 5%;display:none;">id</th>
                         <th style="width: 10%">名称</th>
-                        <th style="width: 10%">缩略图</th>
-                        <th style="width: 10%">发行商</th>
+                        <th style="width: 5%">缩略图</th>
+                        <th style="width: 8%">类别</th>
                         <th style="width: 5%">价格</th>
-                        <th style="width: 5%">类别</th>
-                        <th style="width: 25%">介绍</th>
-                        <th style="width: 20%">配置</th>
+                        <th style="width: 10%">发行商</th>
+                        <th style="width: 30%">介绍</th>
+                        <th style="width: 15%">配置</th>
                         <th style="width: 15%">操作</th>
                     </tr>
                 </thead>
@@ -239,24 +257,20 @@
                     {
                         echo "   
                         <tr id='software".$info["s_id"]."'>
-                            <td type=\"hidden\">".$info["s_id"]."</td>
+                            <td style=\"display:none;\" >".$info["s_id"]."</td>
                             <td>".$info["s_name"]."</td>
                             <td><img src='".$info["s_imagepath"]."' style=\"width:50px;height:50px;\" /></td>
+                         	";
+                        	
+                        	if($info["s_cate"] == 1)  echo "<td>Windows平台</td>";
+                            else if($info["s_cate"] == 2)  echo "<td>Mac平台</td>";
+                        	else if($info["s_cate"] == 3)  echo "<td>IOS平台</td>";
+                        	else if($info["s_cate"] == 4)  echo "<td>数码周边</td>";
+                        	else echo "<td>图书文献</td>";
+                                
+                        echo"
+                            <td>".$info["s_price"]."</td>
                             <td>".$info["s_manufac"]."</td>
-                            <td>".$info["s_price"]."</td>";
-
-                        if($info["s_cate"] == 1)
-                            echo '<td>Windows平台</td>';
-                        else if($info["s_cate"] == 2)
-                            echo '<td>Mac平台</td>';
-                        else if($info["s_cate"] == 3)
-                            echo '<td>IOS平台</td>';
-                        else if($info["s_cate"] == 4)
-                            echo '<td>数码周边</td>';
-                        else
-                            echo '<td>图书文献</td>';
-
-                        echo"    
                             <td>".$info["s_introd"]."</td>
                             <td>".$info["s_requirement"]."</td>
                             <td>
@@ -265,7 +279,7 @@
                             </td>
                         </tr>";
                     }
-                ?>
+                ?>change_nowsoftware
                 </tbody>
             </table>
 
@@ -343,7 +357,6 @@
                             echo "<td><font color='red'>已使用</font></td>";
                         else
                             echo "<td><font color='green'>未使用</font></td>";
-
                         echo "
                             <td>
                                 <span class=\"delete-number\" onclick=\"delete_snumber('".$info["sn_id"]."')\">删除</span>
@@ -351,7 +364,6 @@
                             </tr>
                         ";
                     }
-
                 ?>
                 </tbody>
             </table>

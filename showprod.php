@@ -1,7 +1,7 @@
 <?php
 	include("conn/conn.php");
 
-	$query = mysql_query("select * from software where s_cate = 1 order by s_datetime desc",$conn);
+	$query = mysql_query("select * from software order by s_datetime desc limit 9",$conn);
 	if(!$query)	echo "<script>alert('数据库查询错误');</script>";  
 	while($info = mysql_fetch_array($query))
 	{

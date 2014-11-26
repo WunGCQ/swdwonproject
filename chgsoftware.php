@@ -6,13 +6,13 @@
 
 	$query = mysql_query("select s_imagepath from software where s_id = '".$_POST["s_id"]."'",$conn);
 	$info = mysql_fetch_array($query);
-	$o_imagepath = $info["image_path"];
-	DeleteImage($o_imagepath);
+	$o_imagepath = $info["s_imagepath"];
+	if(!DeleteImage_sae($o_imagepath)){ echo "删除图片失败"; exit;}
 
 	$fileElementName = "csw_image";
   	$s_datetime = date("Y-m-d h:i:s");
 
-	$imagepath = UploadImage($fileElementName);
+	$imagepath = UploadImage_sae($fileElementName);
 	if($imagepath == -1){	echo "上传失败"; exit; }
 	else if($imagepath == -2){ echo "图片格式不正确"; exit;}
 

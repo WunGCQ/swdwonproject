@@ -6,11 +6,9 @@
 	$fileElementName = "nsw_image";
   	$s_datetime = date("Y-m-d h:i:s");
 
-	$imagepath = UploadImage($fileElementName);
-	echo $imagepath;
-	exit;
-	/*if($imagepath == -1){	echo "上传失败"; exit; }
-	else if($imagepath == -2){ echo "图片格式不正确"; exit;}*/
+	$imagepath = UploadImage_sae($fileElementName);
+	if($imagepath == -1){	echo "上传失败"; exit; }
+	else if($imagepath == -2){ echo "图片格式不正确"; exit;}
 
 	$sql = "insert into software(s_name,s_imagepath,s_manufac,s_introd,s_price,s_requirement,s_cate,s_datetime) 
 			values('".$_POST["s_name"]."','".$imagepath."','".$_POST["s_manufac"]."','".$_POST["s_introd"]."',

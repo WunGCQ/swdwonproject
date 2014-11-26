@@ -41,8 +41,9 @@
 	function sendEmails($mail,$to,$subject,$body,$semail,$semail_password)
 	{     
 		$address = $to;//接收邮件的邮箱   
-		$mail->IsSMTP(); // 设置发送邮件的协议：SMTP   
-		$mail->Host = "smtp.163.com"; // 发送邮件的服务器   
+		$mail->IsSMTP(); // 设置发送邮件的协议：SMTP
+        //$mail->Host = "smtp.yeah.net"; // 发送邮件的服务器
+        $mail->Host = "smtp.163.com"; // 发送邮件的服务器   smtp.yeah.net
 		$mail->SMTPAuth = true; // 打开SMTP   
 		$mail->Username = trim($semail); // SMTP账户   
 		$mail->Password = trim($semail_password); // SMTP密码   
@@ -68,51 +69,59 @@
 		return 1;//发送成功显示的信息     
 	}
 
-
+	/*
 	function UploadImage($filepath)
 	{
 	    $type = $_FILES[$filepath]['type'];
-
 		if($type=='image/jpg'|| $type=='image/jpeg'||$type=='image/pjpeg')
 		{
 			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
 			date_default_timezone_set('Etc/GMT-8');
   			$photo=date("Ymdhis").rand(100,999).$ext;
-  			return $_FILES[$filepath]['tmp_name'];
   			$ans = move_uploaded_file( $_FILES[$filepath]['tmp_name'] , 'img/'.$photo );
   			if($ans) return 'img/'.$photo;
   			else return -1;
 		}
 		return -2;
 	}
+	
+	function DeleteImage($imagepath)
+	{
+		unlink("img/".$imagepath);
+	}*/
 
-	/*function UploadImage($filepath)
+	function UploadImage_sae($filepath)
 	{
 	    $type = $_FILES[$filepath]['type'];
-
 		if($type=='image/jpg'|| $type=='image/jpeg'||$type=='image/pjpeg')
 		{
 			$ext = substr($_FILES[$filepath]['name'],strpos($_FILES[$filepath]['name'],'.'));
 			date_default_timezone_set('Etc/GMT-8');
   			$photo=date("Ymdhis").rand(100,999).$ext;
 
-  			$storage = new SaeStorage();
-  			$domain = 'img';
-  			$srcFileName = $_FILE[$filepath]['tmp_name'];
-  			$attr = array('encoding'=>'gzip');
-		 	$result = $storage->upload($domain,$photo,$srcFileName,-1,$attr, true);
 
-  			if($result) return $stor->getUrl($domain,$photo);
+  			$storage = new SaeStorage();
+ 			$domain = 'img';
+ 			$destFileName = $photo;
+ 			$srcFileName = $_FILES[$filepath]['tmp_name'];
+ 			$result1 = $storage->upload($domain,$destFileName,$srcFileName);
+            //$result2 = $storage->write($domain,$destFileName, $srcFileName);
+
+  			if($result1) return $storage->getUrl($domain,$photo);
   			else return -1;
 		}
-		return -2; 
-	}*/
+		return -2;
+	}
 
-	function DeleteImage($imagepath)
+	function DeleteImage_sae($imagepath)
 	{
-		if(is_file($imagepath))
-		{
-			unlink($imagepath);
-		}
+        $domain = "img";
+        $filename = substr($imagepath,strrpos($imagepath,'/')+1);
+        $storage = new SaeStorage();
+        if($storage->fileExists ($domain,$filename))
+        {
+         	return $storage->delete($domain,$filename);   
+        }
+        return false;
 	}
 ?>

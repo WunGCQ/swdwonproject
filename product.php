@@ -23,205 +23,32 @@
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="css/model-window.css"/>
-    <style>
-        body{
-            position: relative;
-            width: 100%;
-            height: auto;
-            padding: 0px;
-            margin: 0px;
-            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
-            font-size: 14px;
-            text-align: center;
-        }
+    <link rel="stylesheet" type="text/css" href="css/product.css"/>
+ 	
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+    /*    
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
 
-        #container{
-            width: 960px;
-            padding: 10px;
-            margin: 0px auto;
-            text-align: center;
-
-        }
-        #brief-info{
-            width: 100%;
-            height: 570px;
-            margin-top: -9px;
-            background-color: #eee;
-            text-align: center;
-        }
-        #brief-info-content{
-            margin: 0px auto;
-            height: 580px;
-            padding-top: 20px;
-            width: 1024px;
-            display: inline-block !important;
-        }
-        #brief-info-images,#brief-info-text{
-            display: inline-block !important;
-            vertical-align: top;
-            height: 500px;
-        }
-        #brief-info-images{
-            width: 500px;
-        }
-        #brief-info-text{
-            width: 480px;
-        }
-        #brief-info-text>*{
-            margin: 5px 20px;
-            padding: 20px;
-            font-size: 20px;
-            width: 100%;
-            text-align: justify;
-        }
-        #brief-info-images img{
-            max-height: 470px;
-        }
-        #product-name{
-            padding-top: 0px;
-            font-size: 20px;
-            color: #666;
-            border-bottom: 1px solid #ccc;
-        }
-        #product-price{
-            color: #f60;
-            font-size: 28px;
-            border-bottom: 1px solid #ccc;
-
-        }
-        #product-price:before{
-            content: "￥";
-        }
-        #select-amount-wrap{
-            border-bottom: 1px solid #ccc;
-        }
-        #select-amount-wrap>div{
-            display: inline-block;
-            vertical-align: top;
-        }
-        #amount-minus,#amount-add{
-            background-color: #dedede;
-            text-align: center;
-            width: 32px;
-            height: 32px;
-            border: 1px solid #999;
-            cursor: pointer;
-            margin-top: 0px;
-            -webkit-user-select: none;
-        }
-        #amount-minus{
-            background-color: #f1f1f1;
-        }
-        #amount-number{
-            background-color: #fff;
-            text-align: center;
-            width: 48px;
-            height: 30px;
-            line-height: 28px;
-            border-top: 1px solid #999;
-            border-bottom: 1px solid #999;
-            border-left: none;
-            border-right: none;
-            margin: 0px -6px 0px -6px;
-            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
-            outline: none;
-        }
-        #product-amount{
-            border-bottom: 1px solid #ccc;
-        }
-        #product-amount:before{
-            content: "库存:  ";
-        }
-        #buybuybuy .btn{
-            display: inline-block;
-            vertical-align: top;
-            font-size: 16px;
-            color: #fff;
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-            border-radius: 1px;
-            font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
-        }
-        #buybuybuy form{
-            width: auto;
-            display: inline-block;
-        }
-        button[value="buy_now"]{
-            background-color:#EA5245;
-            margin-right: 20px;
-        }
-        button[value="buy_now"]:hover{
-            background-color: #cc483c;
-        }
-        button[value="add_into_cart"]{
-            background-color: #31A5E7;
-        }
-        button[value="add_into_cart"]:hover{
-            background-color: #319ddd;
-        }
-        #product-nav-container{
-            width: 980px;
-            margin: 0px auto;
-            height: 40px;
-            padding: 0px;
-        }
-        #product-nav-container>div{
-            display: inline-block;
-            vertical-align: bottom;
-            margin-left: -5px;
-        }
-        .product-info{
-            width: 100px;
-            height: 40px;
-            line-height: 40px;
-            border-bottom: 1px solid #ccc;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            cursor: pointer;
-        }
-        #product-nav-container .active{
-            border-bottom: none;
-            border-top: 2px solid #28a4c9;
-            border-left: 1px solid #ccc;
-            border-right: 1px solid #ccc;
-        }
-        #product-nav-container .long{
-            height: 40px;
-            width: 580px;
-            border-bottom: 1px solid #ccc;
-        }
-        #tab-wrap{
-            width: 980px;
-            margin: 0px auto;
-        }
-        .tab{
-            display: none;
-            width: 100%;
-            height: auto;
-            padding: 20px;
-        }
-        .tab article{
-            text-align: left;
-            margin-left: 25px;
-        }
-        #tab-wrap .active{
-            display: block;
-        }
-
-
-
-    </style>
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+    }*/
+</style>
 </head>
 <body>
 <?php include("header.php"); ?>
 <div id="brief-info">
     <div id="brief-info-content">
-        <div id="brief-info-images" style="display:inline-block;">
+        <div id="brief-info-images" >
             <?php echo "<img src='".$info["s_imagepath"]."'>" ?>
         </div>
-        <div id="brief-info-text" style="display:inline-block;">
+        <div id="brief-info-text">
             <div id="product-name">
                 <?php echo $info["s_name"]; ?>
             </div>
@@ -254,7 +81,7 @@
     <div id="product-nav-container">
         <div class="product-info active" onclick="change_tab(this)">简介</div>
         <div class="product-info" onclick="change_tab(this)">配置</div>
-        <div class="product-info" onclick="change_tab(this)">其他</div>
+        <!--div class="product-info" onclick="change_tab(this)">其他</div-->
         <div class="long"></div>
     </div>
     <div id="tab-wrap">

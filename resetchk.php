@@ -38,7 +38,7 @@
 
 		include("readconfig.php");
 		$to = $u_email;
-		$subject = "思维特官方商店——重置密码链接";
+		$subject = "思唯特官方商店——重置密码链接";
 		$token = md5($info["u_id"].$info["u_password"].$info["u_name"]);
 		$time = time('Y-m-d H:i');
 		$exptime = time()+60*60*24;

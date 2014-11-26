@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>思维特：加入我们</title>
+    <title>思唯特：加入我们</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/warning.js"></script>
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
@@ -21,21 +21,7 @@
     </style>
 </head>
 <body>
-<div id="header">
-    <div id="header-container">
-        <div id="logo-div">
-            思维特LOGO
-
-        </div>
-        <div id="header-user-block">
-            <span><a id="username">用户名</a></span>
-            <span><a id="shopping-cart" href="javascript:changeTab('shoppingcart');">购物车</a></span>
-            <span><a href="#">注销</a></span>
-            <!--<span><a href="javascript:$('#login').show()" id="show-login">登录</a></span>|-->
-            <!--<span><a href="javascript:$('#regist').show()" id="show-regist">注册</a></span>-->
-        </div>
-    </div>
-</div>
+<?php include("header.php"); ?>
 <div id="container">
     <article style="text-align: center;">
         <h1>

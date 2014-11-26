@@ -69,8 +69,8 @@ function delete_nowsoftware(s_id)
         data: {s_id:s_id},
         dataType: "text",
         success: function(resText){
-            if(resText == "error")
-                alert("删除失败");
+            if(resText != "success")
+                alert(resText);
             else
             {
                 alert(resText);
@@ -86,7 +86,7 @@ function jumpto_change(btnObj)
 
     $(".nav-bar").attr("class","nav-bar");
 
-	$(".nav-bar").attr("class","nav-bar");
+    $(".nav-bar").attr("class","nav-bar");
 
     $(".tab-block").attr("class","tab-block");
     $(document.getElementsByClassName("nav-bar")[2]).attr("class","nav-bar nav-active");
@@ -97,79 +97,10 @@ function jumpto_change(btnObj)
     console.log(trObj.children().first());
     var td=trObj.children().first();
     var id=td.text();
-    $("#csw_id").val(id);
-    td = td.next();
+    $("#csw_id").val(td.text());
+    td=td.next();
     $("#csw_name").val(td.text());
-    td=td.next().next();
-    $("#csw_manu").val(td.text());
     td=td.next();
-    $("#csw_price").val(td.text());
-    td=td.next();
-    $("#csw_cate").val(td.text());
-    td=td.next();
-    $("#csw_introd").val(td.text());
-    td=td.next();
-    $("#csw_req").val(td.text());
-}
-
-function change_nowsoftware() {
-	
-	var id = document.getElementById("csw_id").value;
-	var name = document.getElementById("csw_name").value;
-	var manu = document.getElementById("csw_manu").value;
-	var price = document.getElementById("csw_price").value;
-	var introd = document.getElementById("csw_introd").value;
-	var req = document.getElementById("csw_req").value;
-	var cate = document.getElementById("csw_cate").value;
-	var image = document.getElementById("csw_image").value;
-
-	if(name == ""){
-		alert("请填写软件名称");
-		return;
-	}
-	if(manu == ""){
-		alert("请填写软件发行商");
-		return;
-	}
-	if(price == ""){
-		alert("请填写软件价格");
-		return;
-	}
-	if(introd == ""){
-		alert("请填写软件介绍");
-		return;
-	}
-	if(req == ""){
-		alert("请填写软件配置需求");
-		return;
-	}
-	if(image == ""){
-		alert("请上传介绍图片");
-		return;
-	}
-
-	$.ajaxFileUpload
-	(
-		{
-			url:'chgsoftware.php',
-			secureuri:false,
-			fileElementId:'csw_image',
-			dataType: 'text',
-			data:{s_id:id,s_name:name,s_price:price,s_manufac:manu,s_introd:introd,s_imagepath:image,s_cate:cate,s_requirement:req},
-			success: function (resText)
-			{
-				console.log(resText);
-				if(resText == "success")
-				{
-					alert("修改商品成功");
-					//$("#add_new_software").
-				}
-				else
-				{
-					alert(resText);
-				}
-			}
-		});
 }
 
 function delete_user(u_id)
@@ -293,18 +224,6 @@ function changeconfig()
                 document.getElementById("change-send-email-password").value = semail_password;
                 alert("修改成功");
             }
-        }
-    });
-}
-
-function logout()
-{
-    $.ajax({
-        type: "GET",
-        url: "logout.php",
-        dataType: "text",
-        success: function(resText){
-            window.location = "index.php";
         }
     });
 }

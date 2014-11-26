@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>思维特：配送说明</title>
+    <title>思唯特：配送说明</title>
     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/warning.js"></script>
     <link rel="stylesheet" type="text/css" href="css/header.css"/>
